@@ -593,7 +593,7 @@ namespace CJCMCG
 
         private int resol;
         private string patt;
-        public string getstring(long nc, long an, double bp, double tm, long np, long po, long ti, long at, long frm, string lrcs = "", long lrc_frm = 0)
+        public string getstring(long nc, long an, double bp, double tm, long np, long po, long ti, long at, long frm, bool begin, string lrcs = "", long lrc_frm = 0)
         {
             string ss = "{nc={0};an={1};bpm={2};tm={3};nps={4};pol={5};tic={6};ati={7};bts={8};abt={9};ppq={A};lrc=\"\"\"{B}\"\"\";frm={C};lrc_frm={D};}";
             ss = ss.Replace("{0}", Convert.ToString(nc));
@@ -604,8 +604,8 @@ namespace CJCMCG
             ss = ss.Replace("{5}", Convert.ToString(po));
             ss = ss.Replace("{6}", Convert.ToString(ti));
             ss = ss.Replace("{7}", Convert.ToString(at));
-            ss = ss.Replace("{8}", Convert.ToString(ti / resol + 1));
-            ss = ss.Replace("{9}", Convert.ToString(at / resol + 1));
+            ss = ss.Replace("{8}", Convert.ToString(begin ? 0 : Math.Min(ti / resol + 1, at / resol)));
+            ss = ss.Replace("{9}", Convert.ToString(at / resol));
             ss = ss.Replace("{A}", Convert.ToString(resol));
             ss = ss.Replace("{B}", lrcs.Replace("\"", "\\\""));
             ss = ss.Replace("{C}", frm.ToString());
@@ -675,12 +675,25 @@ namespace CJCMCG
                 {
                     Filter = "MOV files (*.mov)|*.mov"
                 };
-                if ((bool)getFileout.ShowDialog())
+                if (getFileout.ShowDialog() == true)
                 {
                     fileout = getFileout.FileName;
                 }
                 else
                 {
+                    Dispatcher.Invoke(new Action(() =>
+                    {
+                        preview.Text = "";
+                        filename.IsEnabled = true;
+                        prog.IsEnabled = true;
+                        Piliang.IsEnabled = true;
+                        canc.IsEnabled = false;
+                        width.IsEnabled = true;
+                        height.IsEnabled = true;
+                        fps.IsEnabled = true;
+                        pres.IsEnabled = true;
+                        des.IsEnabled = true;
+                    }));
                     return;
                 }
                 Dispatcher.Invoke(new Action(() =>
@@ -1045,7 +1058,7 @@ namespace CJCMCG
                 int tmdf = 0;
                 for (int i = 0; i < F * desv; i++)
                 {
-                    string s = getstring(0, noteall, 120, 0, 0, 0, 0, alltic, tmdf) + patt + "{'\\0'}";
+                    string s = getstring(0, noteall, 120, 0, 0, 0, 0, alltic, tmdf, true) + patt + "{'\\0'}";
                     natsu.StandardInput.Write(s);
                     natsu.StandardInput.Flush();
                     List<byte> byteArray = new List<byte>();
@@ -1112,7 +1125,7 @@ namespace CJCMCG
                         nowlrc++;
                         lrcf = 0;
                     }
-                    string s = getstring(notecnt, noteall, 600000000000.0 / resol / ((pairli)bpm[bpmptr]).y, 1.0 * (tmdf - F * desv) / F, notecnt - history[tmdf % F], poly, tmm > alltic ? alltic : Convert.ToInt64(tmm), alltic, tmdf, ((pairls)lrcs[nowlrc]).y, lrcf) + patt + "{'\\0'}";
+                    string s = getstring(notecnt, noteall, 600000000000.0 / resol / ((pairli)bpm[bpmptr]).y, 1.0 * (tmdf - F * desv) / F, notecnt - history[tmdf % F], poly, tmm > alltic ? alltic : Convert.ToInt64(tmm), alltic, tmdf, false, ((pairls)lrcs[nowlrc]).y, lrcf) + patt + "{'\\0'}";
                     natsu.StandardInput.Write(s);
                     natsu.StandardInput.Flush();
                     List<byte> byteArray = new List<byte>();
@@ -1144,7 +1157,7 @@ namespace CJCMCG
                 }
                 for (int i = 0; i < 5 * F; i++)
                 {
-                    string s = getstring(noteall, noteall, 600000000000.0 / resol / ((pairli)bpm[bpmptr]).y, 1.0 * (tmdf - F * desv) / F, notecnt - history[tmdf % F], 0, alltic, alltic, tmdf) + patt + "{'\\0'}";
+                    string s = getstring(noteall, noteall, 600000000000.0 / resol / ((pairli)bpm[bpmptr]).y, 1.0 * (tmdf - F * desv) / F, notecnt - history[tmdf % F], 0, alltic, alltic, tmdf, false) + patt + "{'\\0'}";
                     natsu.StandardInput.Write(s);
                     natsu.StandardInput.Flush();
                     List<byte> byteArray = new List<byte>();

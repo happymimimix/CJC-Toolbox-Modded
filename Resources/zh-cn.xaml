@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:s="clr-namespace:System;assembly=mscorlib">
-    <s:String x:Key="MainTitle">蒟蒻果冻charlieyan的工具箱</s:String>
-    <s:String x:Key="CJCAMMtitle">蒟蒻果冻charlieyan的高级MIDI合并工具</s:String>
+    <s:String x:Key="MainTitle">CJC Toolbox Reborn</s:String>
+    <s:String x:Key="CJCAMMtitle">CJC Advanced Midi Merger</s:String>
     <s:String x:Key="Add">添加</s:String>
     <s:String x:Key="Remove">删除</s:String>
     <s:String x:Key="Clear">清空</s:String>
@@ -44,17 +44,17 @@
     <s:String x:Key="ProcessedTracks">已处理{trks}音轨, 写入{wrtt}音轨...</s:String>
     <s:String x:Key="clearwarn">确定要清空?</s:String>
     <s:String x:Key="Lang">语言:</s:String>
-    <s:String x:Key="CJCAMMInfo" xml:space="preserve">蒟蒻果冻charlieyan的高级MIDI合并工具&#10;一个用来合并多个MIDI的工具，也可以用来获取MIDI信息。&#10;由花抄抄大爷制作。</s:String>
-    <s:String x:Key="CJCORInfo" xml:space="preserve">蒟蒻果冻charlieyan的MIDI重叠去除工具&#10;一个用来去除MIDI中重叠音符但是不影响视觉效果的软件。&#10;由花抄抄大爷制作。</s:String>
+    <s:String x:Key="CJCAMMInfo" xml:space="preserve">CJC的高级MIDI合并工具&#10;一个用来合并多个MIDI的工具，也可以用来获取MIDI信息。&#10;由花抄抄大爷制作。</s:String>
+    <s:String x:Key="CJCORInfo" xml:space="preserve">CJC的MIDI重叠去除工具&#10;一个用来去除MIDI中重叠音符但是不影响视觉效果的软件。&#10;由花抄抄大爷制作。</s:String>
     <s:String x:Key="Version" xml:space="preserve">版本号:&#32;</s:String>
-    <s:String x:Key="CJCORtitle">蒟蒻果冻charlieyan的MIDI重叠去除工具</s:String>
+    <s:String x:Key="CJCORtitle">CJC Overlap Remover</s:String>
     <s:String x:Key="AudioRender">使用高音质模式 (音质更高，但速度更慢)</s:String>
     <s:String x:Key="NotesRemain" xml:space="preserve">剩余音符数:&#32;</s:String>
     <s:String x:Key="OverlapRate" xml:space="preserve">比率:&#32;</s:String>
     <s:String x:Key="Prereading">预读取第{trackcount}个音轨</s:String>
     <s:String x:Key="SuccessfullyOutput" xml:space="preserve">成功将文件输出至</s:String>
-    <s:String x:Key="CJCMCGtitle">蒟蒻果冻charlieyan的MIDI计数君生成器</s:String>
-    <s:String x:Key="CJCMCGInfo" xml:space="preserve">蒟蒻果冻charlieyan的MIDI计数君生成器&#10;CJC Apps的代表作，一个用来快速生成MIDI计数君的软件。&#10;由花抄抄大爷和双笙黑粉后援会制作。</s:String>
+    <s:String x:Key="CJCMCGtitle">CJC Midi Counter Generator</s:String>
+    <s:String x:Key="CJCMCGInfo" xml:space="preserve">CJC的MIDI计数君生成器&#10;CJC Apps的代表作，一个用来快速生成MIDI计数君的软件。&#10;由花抄抄大爷和双笙黑粉后援会制作。</s:String>
     <s:String x:Key="SelectFile">选择文件</s:String>
     <s:String x:Key="Width">宽度</s:String>
     <s:String x:Key="Height">高度</s:String>

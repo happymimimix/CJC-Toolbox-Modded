@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:s="clr-namespace:System;assembly=mscorlib">
-    <s:String x:Key="MainTitle">Conjac Jelly Charlieyan's Toolbox</s:String>
-    <s:String x:Key="CJCAMMtitle">Conjac Jelly Charlieyan's Advanced Midi Merger</s:String>
+    <s:String x:Key="MainTitle">CJC Toolbox Reborn</s:String>
+    <s:String x:Key="CJCAMMtitle">CJC Advanced Midi Merger</s:String>
     <s:String x:Key="Add">Add</s:String>
     <s:String x:Key="Remove">Remove</s:String>
     <s:String x:Key="Clear">Clear</s:String>
@@ -44,17 +44,17 @@
     <s:String x:Key="ProcessedTracks">Processed {trks} tracks, written {wrtt} tracks...</s:String>
     <s:String x:Key="clearwarn">Do you really want to clear the list?</s:String>
     <s:String x:Key="Lang">Language:</s:String>
-    <s:String x:Key="CJCAMMInfo" xml:space="preserve">Conjac Jelly Charlieyan's Advanced Midi Merger&#10;A software used to merge several MIDIs and show the information of a MIDI.&#10;Made by HuaChaoChaoDaYe.</s:String>
-    <s:String x:Key="CJCORInfo" xml:space="preserve">Conjac Jelly Charlieyan's Overlap Remover&#10;A software used to remove the overlaps in a MIDI.&#10;Made by HuaChaoChaoDaYe.</s:String>
+    <s:String x:Key="CJCAMMInfo" xml:space="preserve">CJC Advanced Midi Merger&#10;A software used to merge several MIDIs and show the information of a MIDI.&#10;Made by HuaChaoChaoDaYe.</s:String>
+    <s:String x:Key="CJCORInfo" xml:space="preserve">CJC Overlap Remover&#10;A software used to remove the overlaps in a MIDI.&#10;Made by HuaChaoChaoDaYe.</s:String>
     <s:String x:Key="Version" xml:space="preserve">Version&#32;</s:String>
-    <s:String x:Key="CJCORtitle">Conjac Jelly Charlieyan's Overlap Remover</s:String>
+    <s:String x:Key="CJCORtitle">CJC Overlap Remover</s:String>
     <s:String x:Key="AudioRender">Use audio render (higher audio quality, but lower speed)</s:String>
     <s:String x:Key="NotesRemain" xml:space="preserve">Notes remaining:&#32;</s:String>
     <s:String x:Key="OverlapRate" xml:space="preserve">Rate:&#32;</s:String>
     <s:String x:Key="Prereading">Prereading track {trackcount}</s:String>
     <s:String x:Key="SuccessfullyOutput" xml:space="preserve">Successfully outputted file to&#32;</s:String>
-    <s:String x:Key="CJCMCGtitle">Conjac Jelly Charlieyan's Midi Counter Generator</s:String>
-    <s:String x:Key="CJCMCGInfo" xml:space="preserve">Conjac Jelly Charlieyan's Midi Counter Generator&#10;The representative work of CJC Apps. A software used to generate a counter of a MIDI.&#10;Made by HuaChaoChaoDaYe and Shuangsheng Blackfans Club.</s:String>
+    <s:String x:Key="CJCMCGtitle">CJC Midi Counter Generator</s:String>
+    <s:String x:Key="CJCMCGInfo" xml:space="preserve">CJC Midi Counter Generator&#10;The representative work of CJC Apps. A software used to generate a counter of a MIDI.&#10;Made by HuaChaoChaoDaYe and Shuangsheng Blackfans Club.</s:String>
     <s:String x:Key="SelectFile">Select File</s:String>
     <s:String x:Key="Width">Width</s:String>
     <s:String x:Key="Height">Height</s:String>
