@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -26,7 +27,7 @@ namespace CJC_Advanced_Midi_Merger
     {
         public static Groups gr;
         public static string outfile;
-        private static BufferedStream ous;
+        private static MyBufferedStream ous;
         private static int trks = 0, trkp = 0;
         private static List<byte> tmp, tmp2, tmp3;
         private static int alltrk = 0;
@@ -72,7 +73,7 @@ namespace CJC_Advanced_Midi_Merger
             tmp3 = new List<byte>();
             gr = grp;
             outfile = outfil;
-            ous = new BufferedStream(File.Open(outfile, FileMode.Create, FileAccess.Write, FileShare.Write), 67108864);
+            ous = new MyBufferedStream(File.Open(outfile, FileMode.Create, FileAccess.Write, FileShare.Write), 67108864);
             InitializeComponent();
         }
         public List<byte> ImplaceTrks(List<byte> original, List<byte> newls)
@@ -94,7 +95,7 @@ namespace CJC_Advanced_Midi_Merger
                 ous.WriteByte((byte)(lens / 256 % 256));
                 ous.WriteByte((byte)(lens % 256));
                 trks++;
-                ous.Write(original.ToArray(), 0, original.Count);
+                ous.Write(original);
                 Dispatcher.Invoke(new Action(() =>
                 {
                     Progress.Text = (string)Progress.DataContext;
@@ -116,7 +117,7 @@ namespace CJC_Advanced_Midi_Merger
                 ous.WriteByte((byte)(lens / 256 % 256));
                 ous.WriteByte((byte)(lens % 256));
                 trks++;
-                ous.Write(newls.ToArray(), 0, newls.Count);
+                ous.Write(newls);
                 Dispatcher.Invoke(new Action(() =>
                 {
                     Progress.Text = (string)Progress.DataContext;
@@ -350,6 +351,13 @@ namespace CJC_Advanced_Midi_Merger
             }
             return ouf;
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            ous.Close();
+            thread.Abort();
+        }
+
         public long ImplaceMerge(Groups grp, bool impmrg, long offst, bool rembpm, int trppq, int ppq, int minvol, bool remb, bool remc)
         {
             if (grp.file.EndsWith(".cjcamm"))
@@ -373,7 +381,7 @@ namespace CJC_Advanced_Midi_Merger
             {
                 List<byte> oun = new List<byte>();
                 long res = 0;
-                BufferedStream buff = new BufferedStream(File.Open(grp.file, FileMode.Open, FileAccess.Read, FileShare.Read), 1048576);
+                MyBufferedReadStream buff = new MyBufferedReadStream(File.Open(grp.file, FileMode.Open, FileAccess.Read, FileShare.Read), 33554432);
                 for (int i = 0; i < 10; i++)
                 {
                     buff.ReadByte();
@@ -776,7 +784,7 @@ namespace CJC_Advanced_Midi_Merger
                 }
                 else
                 {
-                    BufferedStream buff = new BufferedStream(File.Open(grp.file, FileMode.Open, FileAccess.Read, FileShare.Read), 1048576);
+                    MyBufferedReadStream buff = new MyBufferedReadStream(File.Open(grp.file, FileMode.Open, FileAccess.Read, FileShare.Read), 33554432);
                     for (int i = 0; i < 10; i++)
                     {
                         buff.ReadByte();
@@ -1014,7 +1022,6 @@ namespace CJC_Advanced_Midi_Merger
                                     {
                                         ouf.Add(getbyte());
                                     }
-                                    empt = false;
                                 }
                                 else if (cmd == 0x20 || cmd == 0x21)
                                 {
@@ -1133,7 +1140,7 @@ namespace CJC_Advanced_Midi_Merger
                     ous.WriteByte((byte)(lens / 256 % 256));
                     ous.WriteByte((byte)(lens % 256));
                     trks++;
-                    ous.Write(tmp.ToArray(), 0, tmp.Count);
+                    ous.Write(tmp);
                     tmp.Clear();
                     tmp2 = new List<byte>();
                     tmp3 = new List<byte>();
@@ -1185,5 +1192,7 @@ namespace CJC_Advanced_Midi_Merger
                 Close();
             }));
         }
+
+        public Thread thread;
     }
 }

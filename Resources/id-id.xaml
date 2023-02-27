@@ -1,0 +1,128 @@
+﻿<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key=".MainTitle">CJC Toolbox</s:String>
+    <!-- CJCAMM Strings -->
+    <s:String x:Key="a.CJCAMMtitle">CJC Advanced MIDI Merger</s:String>
+    <s:String x:Key="a.Add">Tambah</s:String>
+    <s:String x:Key="a.Remove">Hapus</s:String>
+    <s:String x:Key="a.Clear">Bersihkan</s:String>
+    <s:String x:Key="a.Settings">Setelan</s:String>
+    <s:String x:Key="a.Info">Info</s:String>
+    <s:String x:Key="a.SaveGroup">Simpan Grup</s:String>
+    <s:String x:Key="a.LoadGroup">Buka Grup</s:String>
+    <s:String x:Key="a.Start">Mulai!</s:String>
+    <s:String x:Key="a.Cancel">Batalkan</s:String>
+    <s:String x:Key="a.Save">Simpan!</s:String>
+    <s:String x:Key="a.StartWindowtitle">Mulai menggabungkan</s:String>
+    <s:String x:Key="a.InfoWindowtitle">Informasi MIDI</s:String>
+    <s:String x:Key="a.MergingMidis">Menggabungkan MIDI...</s:String>
+    <s:String x:Key="a.Setppq">Setel PPQ</s:String>
+    <s:String x:Key="a.ImpBpm">Tempatkan gabungan dari BPM menuju trek pertama</s:String>
+    <s:String x:Key="a.ImpMrg">Tempatkan semua gabungan menuju trek pertama</s:String>
+    <s:String x:Key="a.RemBpm">Singkirkan semua BPM events</s:String>
+    <s:String x:Key="a.RemPC">Singkirkan semua &quot;program change&quot; event (Setel semua instrumen ke piano)</s:String>
+    <s:String x:Key="a.RemPB">Singkirkan semua lengkungan nada</s:String>
+    <s:String x:Key="a.RemEpt">Singkirkan trek yang kosong</s:String>
+    <s:String x:Key="a.TrsPpq">Konversi PPQ yang asli menjadi PPQ utama</s:String>
+    <s:String x:Key="a.Offst">Setel offset (tick)</s:String>
+    <s:String x:Key="a.MinvolFront">Singkirkan note dengan volume tidak lebih besar dari</s:String>
+    <s:String x:Key="a.OKkey">Oke</s:String>
+    <s:String x:Key="a.Filename">Nama file: </s:String>
+    <s:String x:Key="a.Filesize">Ukuran file (bit): </s:String>
+    <s:String x:Key="a.Trkcnt">Jumlah trek: </s:String>
+    <s:String x:Key="a.OriginalPpq">PPQ Asli: </s:String>
+    <s:String x:Key="a.Notecount">Jumlah note: </s:String>
+    <s:String x:Key="a.Midilen">Durasi MIDI (tick): </s:String>
+    <s:String x:Key="a.Getmoreinfo">Informasi lebih lanjut</s:String>
+    <s:String x:Key="a.Finished">Berhasil.</s:String>
+    <s:String x:Key="a.Failed">Gagal.</s:String>
+    <s:String x:Key="a.Stopped">Terhenti.</s:String>
+    <s:String x:Key="a.Parsingtrack">Mengurai trek {trackcount}, {tracksize} bit</s:String>
+    <s:String x:Key="a.UnableGroup">Tidak dapat memperoleh informasi lebih banyak dari file grup ini</s:String>
+    <s:String x:Key="a.Clickgetinfo">(Klik &quot;Informasi lebih lanjut&quot; dibawah untuk mendapatkan)</s:String>
+    <s:String x:Key="a.ProcessedTracks">{trks} trek diproses, {wrtt} trek ditulis...</s:String>
+    <s:String x:Key="a.clearwarn">Apakah kamu ingin menghapus daftar isinya?</s:String>
+    <!-- CJC Toolbox Home Page Strings -->
+    <s:String x:Key=".Lang">Bahasa:</s:String>
+    <s:String x:Key=".CJCAMMInfo" xml:space="preserve">CJC Advanced MIDI Merger
+Sebuah software yang digunakan untuk menggabungkan beberapa MIDI dan menampilkan informasi tentang MIDI tersebut.</s:String>
+    <s:String x:Key=".CJCORInfo" xml:space="preserve">CJC Overlap Remover
+Sebuah software yang digunakan untuk menyingkirkan note berlebih pada MIDI.</s:String>
+    <s:String x:Key=".CJCMCGInfo" xml:space="preserve">CJC MIDI Counter Generator
+Karya representatif dari CJC Apps. Sebuah software yang digunakan untuk membuat sebuah counter/penghitung dari MIDI.</s:String>
+    <s:String x:Key=".Version" xml:space="preserve">Versi </s:String>
+    <!-- CJCOR Strings -->
+    <s:String x:Key="o.CJCORtitle">CJC Overlap Remover</s:String>
+    <s:String x:Key="o.AudioRender">Gunakan audio render (Kualitas audio lebih baik, namun lebih lama)</s:String>
+    <s:String x:Key="o.NotesRemain" xml:space="preserve">Note tersisa: </s:String>
+    <s:String x:Key="o.OverlapRate" xml:space="preserve">Rate: </s:String>
+    <s:String x:Key="o.Prereading">Prereading trek {trackcount}</s:String>
+    <s:String x:Key="o.Parsingtrack">Mengurai trek {trackcount}, {tracksize} bit</s:String>
+    <s:String x:Key="o.Start">Mulai!</s:String>
+    <s:String x:Key="o.SuccessfullyOutput" xml:space="preserve">Berhasil menyimpan file di </s:String>
+    <!-- CJCMCG Strings -->
+    <s:String x:Key="m.CJCMCGtitle">CJC MIDI Counter Generator</s:String>
+    <s:String x:Key="m.SelectFile">Pilih File</s:String>
+    <s:String x:Key="m.Width">Lebar</s:String>
+    <s:String x:Key="m.Height">Panjang</s:String>
+    <s:String x:Key="m.Fps">FPS</s:String>
+    <s:String x:Key="m.Preset">Preset</s:String>
+    <s:String x:Key="m.Preview">Pratinjau Teks</s:String>
+    <s:String x:Key="m.PatSel">Pola</s:String>
+    <s:String x:Key="m.FonSel">Font</s:String>
+    <s:String x:Key="m.FonSz">Ukuran Teks</s:String>
+    <s:String x:Key="m.Color">Warna</s:String>
+    <s:String x:Key="m.Align">Sejajarkan</s:String>
+    <s:String x:Key="m.AlignUL">Kiri Atas</s:String>
+    <s:String x:Key="m.AlignUR">Kanan Atas</s:String>
+    <s:String x:Key="m.AlignUM">Tengah Atas</s:String>
+    <s:String x:Key="m.AlignDL">Kiri Bawah</s:String>
+    <s:String x:Key="m.AlignDR">Kanan Bawah</s:String>
+    <s:String x:Key="m.AlignDM">Tengah Bawah</s:String>
+    <s:String x:Key="m.OutputToCjcmcg">Hanya file praproses saja</s:String>
+    <s:String x:Key="m.PatSv">Ubah Pola</s:String>
+    <s:String x:Key="m.ColorChg">Ubah Warna</s:String>
+    <s:String x:Key="m.OKkey">Oke</s:String>
+    <s:String x:Key="m.ReadHelp">Instruksi untuk digunakan</s:String>
+    <s:String x:Key="m.Remove">Singkirkan</s:String>
+    <s:String x:Key="m.Savv">Simpan</s:String>
+    <s:String x:Key="m.Parsingtrack">Mengurai trek {trackcount}, {tracksize} bit</s:String>
+    <s:String x:Key="m.Start">Mulai!</s:String>
+    <s:String x:Key="m.Cancel">Batalkan</s:String>
+    <s:String x:Key="m.Finished">Berhasil.</s:String>
+    <s:String x:Key="m.Failed">Gagal.</s:String>
+    <s:String x:Key="m.Stopped">Terhenti.</s:String>
+    <s:String x:Key="m.ReadFinished">Berhasil dibaca. {notecnt} note.</s:String>
+    <s:String x:Key="m.FrameRender">Terrender {frames} frame, {fps} FPS</s:String>
+    <s:String x:Key="m.DelayStart">Waktu tunda (detik):</s:String>
+    <s:String x:Key="m.DetectedOld">Terdeteksi bahwa ini adalah pola lama, konversi menjadi pola baru?</s:String>
+    <s:String x:Key="m.ConvertFin">Konversi berhasil. Simpan?</s:String>
+    <s:String x:Key="m.UpdateOld">Perbarui pola?</s:String>
+    <s:String x:Key="m.cjcmcg_help" xml:space="preserve">Software ini dibuat oleh CJC Apps. Pastikan ada ffmpeg.exe di folder yang sama dengan program atau di C:\Windows\System32. Jika kamu tidak punya, segera untuk mengunduh di http://ffmpeg.org . Disarankan juga untuk mengunduh xz.exe (dari https://tukaani.org/xz) untuk menghindari masalah ketika mendekrompresi MIDI.
+
+Pastikan juga kamu menginstall Python 3, menambahkan itu ke PATH dan menginstall Natsulang dengan pip, untuk menjalankan Natsulang secara normal.
+
+Program ini menggunakan Natsulang untuk membuat counter. Ini adalah bahasa pengolah teks oleh CJC.
+
+Kamu bisa membuat program Natsulang dari variabel berikut:
+  frm: Frame video saat ini (dimulai dari 0)
+  nc: Note Count:
+  an: Semua note
+  BPM: Ketukan per menit
+  tm: Waktu (detik, direkomendasikan untuk menampilkan dengan dua desimal, lihat instruksi dibawah)
+  nps: Note per detik
+  pol: Polifoni
+  tic: Tick
+  ati: Semua tick
+  bts: Ketukan
+  ati: Semua ketukan
+  ppq: Resolusi (PPQ)
+  lrc: Lirik
+  lrc_frm: Frame sejak lirik ini muncul (dimulai dari 0)
+
+Kamu dapat menggunakan &quot;{variable}&quot; untuk menampilkan nilai dari variabel. Kamu dapat memasukan ekspresi untuk membuat beberapa perhitungan yang kompleks. Jika kamu ingin menghasilkan sebuah angka dengan koma per tiga digit, kamu dapat menggunakan &quot;{format({number},',')}&quot;. Jika kamu ingin menghasilkan waktu dengan dua desimal, kamu dapat menggunakan &quot;{format(tm,'.2f')}&quot;.
+
+Jika kamu menggunakan counter ini di videomu, jangan lupa untuk kredit kami seperti ini:
+MIDI Counter dirender oleh CJCMCG dari CJC Apps.
+https://github.com/Ace-tyl/CJC-Toolbox-Reborn</s:String>
+</ResourceDictionary>

@@ -6,7 +6,7 @@
         xmlns:mdfk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:CJCMCG"
         mc:Ignorable="d"
-        Title="{DynamicResource ColorChg}" Height="220" Width="360" ResizeMode="NoResize" Icon="../Resources/CJCMCGicon.ico">
+        Title="{DynamicResource m.ColorChg}" Height="220" Width="360" ResizeMode="NoResize" Icon="../Resources/CJCMCGicon.ico">
     <Grid>
         <DockPanel Height="25" LastChildFill="False" Margin="10,10,0,0" VerticalAlignment="Top">
             <Label Content="A" Height="25" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
@@ -28,6 +28,6 @@
             <Slider HorizontalAlignment="Left" Minimum="0" Maximum="255" Margin="0,3,0,0" Width="220" VerticalAlignment="Top" x:Name="Bslider" Height="22" ValueChanged="Bslider_ValueChanged"/>
             <mdfk:DecimalUpDown Width="60" Minimum="0" Maximum="255" Value="0" x:Name="Bval" Increment="1" Margin="10,0,0,0" ValueChanged="Bval_ValueChanged"/>
         </DockPanel>
-        <Button x:Name="okkey" Content="{DynamicResource OKkey}" Margin="10,10,10,10" VerticalAlignment="Bottom" Height="25" Click="okkey_Click"/>
+        <Button x:Name="okkey" Content="{DynamicResource m.OKkey}" Margin="10,10,10,10" VerticalAlignment="Bottom" Height="25" Click="okkey_Click"/>
     </Grid>
 </Window>

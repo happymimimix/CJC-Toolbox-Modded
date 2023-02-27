@@ -197,12 +197,21 @@ namespace CJCMCG
         {
             OpenFileDialog open = new OpenFileDialog
             {
-                Filter = "Midi files or zipped files (*.mid, *.cjcmcg, *.xz, *.7z, *.zip, *.gz, *.tar, *.rar, *.bz2)|*.mid; *.cjcmcg; *.xz; *.7z; *.zip; *.gz; *.tar; *.rar; *.bz2"
+                Filter = "Midi files, zipped files and preprocessed files (*.mid, *.cjcmcg, *.xz, *.7z, *.zip, *.gz, *.tar, *.rar, *.bz2)|*.mid; *.cjcmcg; *.xz; *.7z; *.zip; *.gz; *.tar; *.rar; *.bz2"
             };
             if ((bool)open.ShowDialog())
             {
                 filename.Content = open.FileName;
                 fileselected = true;
+            }
+            if (open.FileName.EndsWith(".cjcmcg"))
+            {
+                is_preprocess.IsChecked = false;
+                is_preprocess_block.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                is_preprocess_block.Visibility = Visibility.Visible;
             }
         }
 
@@ -230,6 +239,14 @@ namespace CJCMCG
             pattt = pattt.Replace("\\10", "\n").Replace("\\23", "\\");
             pat.Text = pattt;
             long coll = (int)reg.GetValue("Color");
+            try
+            {
+                align.SelectedItem = align.Items[(int)reg.GetValue("Align")];
+            }
+            catch (Exception)
+            {
+                align.SelectedItem = 0;
+            }
             uint col = Convert.ToUInt32(coll < 0 ? coll + (1L << 32) : coll);
             color.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb((byte)(col / 256 / 256 / 256), (byte)(col / 256 / 256 % 256), (byte)(col / 256 % 256), (byte)(col % 256)));
             bool isnew = false;
@@ -264,6 +281,7 @@ namespace CJCMCG
                         long cc = Convert.ToUInt32(colr.A * 256L * 256 * 256 + colr.R * 256 * 256 + colr.G * 256 + colr.B);
                         key.SetValue("Color", Convert.ToInt32(cc >= (1L << 31) ? cc - (1L << 32) : cc), RegistryValueKind.DWord);
                         key.SetValue("Pattern", pattt.Replace("\\", "\\23").Replace("\n", "\\10"), RegistryValueKind.String);
+                        key.SetValue("Align", align.SelectedIndex, RegistryValueKind.DWord);
                     }
                 }
             }
@@ -340,8 +358,8 @@ namespace CJCMCG
             {
                 ComboBoxItem item = new ComboBoxItem
                 {
-                    Uid = s,
-                    Content = s
+                    Uid = s.Replace("/2", "\\").Replace("/1", "/"),
+                    Content = s.Replace("/2", "\\").Replace("/1", "/")
                 };
                 pats.Items.Add(item);
             }
@@ -379,6 +397,7 @@ namespace CJCMCG
             edit.col = Convert.ToUInt32(col.A * 256L * 256 * 256 + col.R * 256 * 256 + col.G * 256 + col.B);
             edit.ff = ((ComboBoxItem)font.SelectedItem).Uid;
             edit.fs = (int)fsize.Value;
+            edit.al = align.SelectedIndex;
             edit.pat = pat.Text.Replace("\\", "\\23").Replace("\n", "\\10");
             edit.ShowDialog();
             pats.Items.Clear();
@@ -388,8 +407,8 @@ namespace CJCMCG
             {
                 ComboBoxItem item = new ComboBoxItem
                 {
-                    Uid = s,
-                    Content = s
+                    Uid = s.Replace("/2", "\\").Replace("/1", "/"),
+                    Content = s.Replace("/2", "\\").Replace("/1", "/")
                 };
                 pats.Items.Add(item);
             }
@@ -401,7 +420,7 @@ namespace CJCMCG
         {
             Process ffmpeg = new Process();
             string args = "" +
-                    /*" -s " + W.ToString() + "x" + H.ToString() + */" -y -vsync 2 -threads " + Environment.ProcessorCount.ToString() + " -r " + Convert.ToString(F)
+                    /*" -s " + W.ToString() + "x" + H.ToString() + */" -y -r " + Convert.ToString(F)
                     + " -i - -vcodec png";
             args += " \"" + path + "\"";
             ffmpeg.StartInfo = new ProcessStartInfo("ffmpeg", args)
@@ -446,7 +465,7 @@ namespace CJCMCG
             }
             catch (Exception)
             {
-                Console.WriteLine("xz.exe not found, trying internal decompress with lower speed and lower compatibility...");
+                MessageBox.Show("xz.exe not found, trying internal decompress with lower speed and lower compatibility...");
                 return new XZStream(input);
             }
         }
@@ -567,28 +586,21 @@ namespace CJCMCG
         private string fonsel;
         private int fonsz;
         private SolidColorBrush colsel;
+        private SolidBrush textcolor;
+        StringFormat format;
+        Font fon;
         public void newframe(int W, int H, string pat)
         {
-            using (Font fon = new Font(fonsel, fonsz))
+            Bitmap img = new Bitmap(W, H);
+            RectangleF recF = new RectangleF(0, 0, W, H);
+            using (Graphics gfx = Graphics.FromImage(img))
             {
-                Bitmap img = new Bitmap(W, H);
-                using (Graphics gfx = Graphics.FromImage(img))
-                {
-                    gfx.FillRectangle(System.Drawing.Brushes.Transparent, 0, 0, W, H);
-                    Dispatcher.Invoke(new Action(() =>
-                    {
-                        using (SolidBrush textBrush = new SolidBrush(System.Drawing.Color.FromArgb(colsel.Color.A, colsel.Color.R, colsel.Color.G, colsel.Color.B)))
-                        {
-                            gfx.DrawString(pat, fon, textBrush, new PointF(0, 0));
-                        }
-                    }));
-                    gfx.Flush();
-                }
-                img.Clone(new System.Drawing.Rectangle(0, 0, W, H), System.Drawing.Imaging.PixelFormat.DontCare);
-                byte[] shit = (byte[])(new ImageConverter()).ConvertTo(img, typeof(byte[]));
-                ff.StandardInput.BaseStream.Write(shit, 0, shit.Length);
-                img.Dispose();
+                gfx.DrawString(pat, fon, textcolor, recF, format);
+                gfx.Flush();
             }
+            byte[] shit = (byte[])(new ImageConverter()).ConvertTo(img, typeof(byte[]));
+            ff.StandardInput.BaseStream.Write(shit, 0, shit.Length);
+            img.Dispose();
         }
 
         private int resol;
@@ -607,7 +619,7 @@ namespace CJCMCG
             ss = ss.Replace("{8}", Convert.ToString(begin ? 0 : Math.Min(ti / resol + 1, at / resol)));
             ss = ss.Replace("{9}", Convert.ToString(at / resol));
             ss = ss.Replace("{A}", Convert.ToString(resol));
-            ss = ss.Replace("{B}", lrcs.Replace("\"", "\\\""));
+            ss = ss.Replace("{B}", lrcs.Replace("\\", "\\\\").Replace("\"", "\\\""));
             ss = ss.Replace("{C}", frm.ToString());
             ss = ss.Replace("{D}", lrc_frm.ToString());
             return ss;
@@ -667,6 +679,7 @@ namespace CJCMCG
                         fps.IsEnabled = true;
                         pres.IsEnabled = true;
                         des.IsEnabled = true;
+                        is_preprocess.IsEnabled = true;
                     }));
                     return;
                 }
@@ -693,6 +706,7 @@ namespace CJCMCG
                         fps.IsEnabled = true;
                         pres.IsEnabled = true;
                         des.IsEnabled = true;
+                        is_preprocess.IsEnabled = true;
                     }));
                     return;
                 }
@@ -702,6 +716,14 @@ namespace CJCMCG
                     fonsel = (string)((ComboBoxItem)font.SelectedItem).Content;
                     fonsz = (int)fsize.Value;
                     colsel = ((SolidColorBrush)color.Background);
+                    textcolor = new SolidBrush(System.Drawing.Color.FromArgb(colsel.Color.A, colsel.Color.R, colsel.Color.G, colsel.Color.B));
+                    string fmt = (align.SelectedItem as ComboBoxItem).DataContext as string;
+                    format = new StringFormat
+                    {
+                        LineAlignment = fmt[0] == 'U' ? StringAlignment.Near : StringAlignment.Far,
+                        Alignment = fmt[1] == 'L' ? StringAlignment.Near : (fmt[1] == 'R' ? StringAlignment.Far : StringAlignment.Center)
+                    };
+                    fon = new Font(fonsel, fonsz);
                 }));
                 int W = 0, H = 0, F = 0, desv = 0;
                 Dispatcher.Invoke(new Action(() =>
@@ -981,7 +1003,7 @@ namespace CJCMCG
                     }
                     Dispatcher.Invoke(new Action(() =>
                     {
-                        prog.SetResourceReference(ContentProperty, "ReadFinished");
+                        prog.SetResourceReference(ContentProperty, "m.ReadFinished");
                         string str = (string)prog.Content;
                         str = str.Replace("{notecnt}", noteall.ToString("N0"));
                         prog.Content = str;
@@ -1056,6 +1078,8 @@ namespace CJCMCG
                 }
                 ff = startNewSSFF(W, H, F, fileout);
                 int tmdf = 0;
+                double liveFps = 0;
+                Stopwatch stopwatch = new Stopwatch();
                 for (int i = 0; i < F * desv; i++)
                 {
                     string s = getstring(0, noteall, 120, 0, 0, 0, 0, alltic, tmdf, true) + patt + "{'\\0'}";
@@ -1070,11 +1094,18 @@ namespace CJCMCG
                     }
                     s = Encoding.Default.GetString(byteArray.ToArray());
                     newframe(W, H, s);
+                    if (!stopwatch.IsRunning) { stopwatch.Start(); }
+                    else
+                    {
+                        double elapsed = 1e7 / stopwatch.ElapsedTicks;
+                        liveFps = (liveFps * 2 + elapsed) / 3;
+                        stopwatch.Restart();
+                    }
                     Dispatcher.Invoke(new Action(() =>
                     {
-                        prog.SetResourceReference(ContentProperty, "FrameRender");
+                        prog.SetResourceReference(ContentProperty, "m.FrameRender");
                         string str = (string)prog.Content;
-                        str = str.Replace("{frames}", tmdf.ToString());
+                        str = str.Replace("{frames}", tmdf.ToString()).Replace("{fps}", Math.Round(liveFps).ToString());
                         prog.Content = str;
                         preview.Text = s;
                     }));
@@ -1137,12 +1168,19 @@ namespace CJCMCG
                     }
                     s = Encoding.Default.GetString(byteArray.ToArray());
                     newframe(W, H, s);
+                    if (!stopwatch.IsRunning) { stopwatch.Start(); }
+                    else
+                    {
+                        double elapsed = 1e7 / stopwatch.ElapsedTicks;
+                        liveFps = (liveFps * 2 + elapsed) / 3;
+                        stopwatch.Restart();
+                    }
                     history[tmdf % F] = notecnt;
                     Dispatcher.Invoke(new Action(() =>
                     {
-                        prog.SetResourceReference(ContentProperty, "FrameRender");
+                        prog.SetResourceReference(ContentProperty, "m.FrameRender");
                         string str = (string)prog.Content;
-                        str = str.Replace("{frames}", tmdf.ToString());
+                        str = str.Replace("{frames}", tmdf.ToString()).Replace("{fps}", Math.Round(liveFps).ToString());
                         prog.Content = str;
                         preview.Text = s;
                     }));
@@ -1169,11 +1207,18 @@ namespace CJCMCG
                     }
                     s = Encoding.Default.GetString(byteArray.ToArray());
                     newframe(W, H, s);
+                    if (!stopwatch.IsRunning) { stopwatch.Start(); }
+                    else
+                    {
+                        double elapsed = 1e7 / stopwatch.ElapsedTicks;
+                        liveFps = (liveFps * 2 + elapsed) / 3;
+                        stopwatch.Restart();
+                    }
                     Dispatcher.Invoke(new Action(() =>
                     {
-                        prog.SetResourceReference(ContentProperty, "FrameRender");
+                        prog.SetResourceReference(ContentProperty, "m.FrameRender");
                         string str = (string)prog.Content;
-                        str = str.Replace("{frames}", tmdf.ToString());
+                        str = str.Replace("{frames}", tmdf.ToString()).Replace("{fps}", Math.Round(liveFps).ToString());
                         prog.Content = str;
                         preview.Text = s;
                     }));
@@ -1182,7 +1227,7 @@ namespace CJCMCG
                 }
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    prog.SetResourceReference(ContentProperty, "Finished");
+                    prog.SetResourceReference(ContentProperty, "m.Finished");
                     preview.Text = "";
                 }));
                 ff.StandardInput.Close();
@@ -1197,13 +1242,14 @@ namespace CJCMCG
                     fps.IsEnabled = true;
                     pres.IsEnabled = true;
                     des.IsEnabled = true;
+                    is_preprocess.IsEnabled = true;
                 }));
             }
             catch (ThreadAbortException)
             {
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    prog.SetResourceReference(ContentProperty, "Stopped");
+                    prog.SetResourceReference(ContentProperty, "m.Stopped");
                     preview.Text = "";
                     filename.IsEnabled = true;
                     prog.IsEnabled = true;
@@ -1214,6 +1260,7 @@ namespace CJCMCG
                     fps.IsEnabled = true;
                     pres.IsEnabled = true;
                     des.IsEnabled = true;
+                    is_preprocess.IsEnabled = true;
                 }));
                 return;
             }
@@ -1222,7 +1269,7 @@ namespace CJCMCG
                 MessageBox.Show(e.Message, "Error!");
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    prog.SetResourceReference(ContentProperty, "Failed");
+                    prog.SetResourceReference(ContentProperty, "m.Failed");
                     preview.Text = "";
                     filename.IsEnabled = true;
                     prog.IsEnabled = true;
@@ -1233,6 +1280,7 @@ namespace CJCMCG
                     fps.IsEnabled = true;
                     pres.IsEnabled = true;
                     des.IsEnabled = true;
+                    is_preprocess.IsEnabled = true;
                 }));
             }
         }
@@ -1251,7 +1299,11 @@ namespace CJCMCG
             fps.IsEnabled = false;
             pres.IsEnabled = false;
             des.IsEnabled = false;
-            thread = new Thread(progress);
+            is_preprocess.IsEnabled = false;
+            if (is_preprocess.IsChecked == false)
+                thread = new Thread(progress);
+            else
+                thread = new Thread(ToolProcess);
             thread.Start();
         }
 

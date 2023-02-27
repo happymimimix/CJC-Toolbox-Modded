@@ -5,12 +5,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Conjac Jelly Charlieyan's Toolbox")]
+[assembly: AssemblyTitle("CJC Toolbox")]
 [assembly: AssemblyDescription("A toolbox containing all apps by CJC.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CJC Apps")]
-[assembly: AssemblyProduct("Conjac Jelly Charlieyan's Toolbox")]
-[assembly: AssemblyCopyright("Copyright © 2019-2020 CJC Apps")]
+[assembly: AssemblyProduct("CJC Toolbox")]
+[assembly: AssemblyCopyright("Copyright © 2019-2023 CJC Apps")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

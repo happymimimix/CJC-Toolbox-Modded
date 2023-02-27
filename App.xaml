@@ -7,6 +7,10 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources\en-us.xaml"/>
+                <ResourceDictionary Source="Resources\de-de.xaml"/>
+                <ResourceDictionary Source="Resources\el-gr.xaml"/>
+                <ResourceDictionary Source="Resources\id-id.xaml"/>
+                <ResourceDictionary Source="Resources\ja-jp.xaml"/>
                 <ResourceDictionary Source="Resources\zh-cn.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

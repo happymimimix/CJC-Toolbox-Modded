@@ -1,0 +1,128 @@
+﻿<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key=".MainTitle">Εργαλειοθήκη CJC</s:String>
+    <!-- CJCAMM Strings -->
+    <s:String x:Key="a.CJCAMMtitle">Προηγμένη Συγχώνευση MIDI CJC</s:String>
+    <s:String x:Key="a.Add">Προσθήκη</s:String>
+    <s:String x:Key="a.Remove">Αφαίρεση</s:String>
+    <s:String x:Key="a.Clear">Εκκαθάριση</s:String>
+    <s:String x:Key="a.Settings">Ρυθμίσεις</s:String>
+    <s:String x:Key="a.Info">Πληροφορίες</s:String>
+    <s:String x:Key="a.SaveGroup">Αποθήκευση Ομάδας</s:String>
+    <s:String x:Key="a.LoadGroup">Φόρτωση Ομάδας</s:String>
+    <s:String x:Key="a.Start">Έναρξη!</s:String>
+    <s:String x:Key="a.Cancel">Ακύρωση</s:String>
+    <s:String x:Key="a.Save">Αποθήκευση!</s:String>
+    <s:String x:Key="a.StartWindowtitle">Έναρξη Συγχώνευσης</s:String>
+    <s:String x:Key="a.InfoWindowtitle">Πληροφορίες MIDI</s:String>
+    <s:String x:Key="a.MergingMidis">Συγχώνευση Αρχείων MIDI...</s:String>
+    <s:String x:Key="a.Setppq">Ορισμός PPQ</s:String>
+    <s:String x:Key="a.ImpBpm">Συγχώνευση εντολών BPM στο πρώτο τμήμα</s:String>
+    <s:String x:Key="a.ImpMrg">Συγχώνευση όλων των εντολών σε ένα τμήμα</s:String>
+    <s:String x:Key="a.RemBpm">Κατάργηση όλων των εντολών BPM</s:String>
+    <s:String x:Key="a.RemPC">Κατάργηση όλων των εντολών αλλαγής προγράμματος (Ορισμός όλων των οργάνων σε πιάνο)</s:String>
+    <s:String x:Key="a.RemPB">Κατάργηση όλων των εντολών αλλαγής τόνου</s:String>
+    <s:String x:Key="a.RemEpt">Κατάργηση κενών τμημάτων</s:String>
+    <s:String x:Key="a.TrsPpq">Μετατροπή του αρχικού PPQ στο κύριο PPQ</s:String>
+    <s:String x:Key="a.Offst">Ορισμός μετατόπισης (σε ticks)</s:String>
+    <s:String x:Key="a.MinvolFront">Κατάργηση νοτών με ένταση μικρότερη ή ίση από</s:String>
+    <s:String x:Key="a.OKkey">ΟΚ</s:String>
+    <s:String x:Key="a.Filename">Όνομα αρχείου: </s:String>
+    <s:String x:Key="a.Filesize">Μέγεθος αρχείου (σε bytes): </s:String>
+    <s:String x:Key="a.Trkcnt">Αριθμός τμημάτων: </s:String>
+    <s:String x:Key="a.OriginalPpq">Αρχικό PPQ: </s:String>
+    <s:String x:Key="a.Notecount">Αριθμός νοτών: </s:String>
+    <s:String x:Key="a.Midilen">Διάρκεια MIDI (σε ticks): </s:String>
+    <s:String x:Key="a.Getmoreinfo">Εμφάνιση περισσότερων πληροφοριών</s:String>
+    <s:String x:Key="a.Finished">Ολοκλήρωση.</s:String>
+    <s:String x:Key="a.Failed">Αποτυχία.</s:String>
+    <s:String x:Key="a.Stopped">Σταματημένο.</s:String>
+    <s:String x:Key="a.Parsingtrack">Φόρτωση τμήματος {trackcount}, {tracksize} bytes</s:String>
+    <s:String x:Key="a.UnableGroup">Αδυναμία συλλογής περισσότερων πληροφοριών σε ομαδοποιημένα αρχεία</s:String>
+    <s:String x:Key="a.Clickgetinfo">(Πατήστε «Εμφάνιση περισσότερων πληροφοριών» παρακάτω)</s:String>
+    <s:String x:Key="a.ProcessedTracks">Επεξεργάστηκαν {trks} τμήματα, αποθηκεύτηκαν {wrtt} τμήματα...</s:String>
+    <s:String x:Key="a.clearwarn">Θέλετε πραγματικά να εκκαθαρίσετε αυτή τη λίστα;</s:String>
+    <!-- CJC Toolbox Home Page Strings -->
+    <s:String x:Key=".Lang">Γλώσσα:</s:String>
+    <s:String x:Key=".CJCAMMInfo" xml:space="preserve">Προηγμένη Συγχώνευση MIDI CJC
+Ένα πρόγραμμα για συγχώνευση αρχείων MIDI και συλλογή πληροφοριών ενός MIDI.</s:String>
+    <s:String x:Key=".CJCORInfo" xml:space="preserve">Αφαιρετής Επικαλύψεων CJC
+Ένα πρόγραμμα για αφαίρεση επικαλυπτόμενων νοτών σε ένα MIDI.</s:String>
+    <s:String x:Key=".CJCMCGInfo" xml:space="preserve">Δημιουργός Μετρητή MIDI CJC
+Το αντιπροσωπευτικό έργω των εφαρμογών CJC. Ένα πρόγραμμα για τη δημιουργία μετρητή για ένα αρχείο MIDI.</s:String>
+    <s:String x:Key=".Version" xml:space="preserve">Έκδοση </s:String>
+    <!-- CJCOR Strings -->
+    <s:String x:Key="o.CJCORtitle">Αφαιρετής Επικαλύψεων CJC</s:String>
+    <s:String x:Key="o.AudioRender">Δημιουργία ήχου (υψηλότερη ποιότητα ήχου, αλλά χαμηλότερη ταχύτητα)</s:String>
+    <s:String x:Key="o.NotesRemain" xml:space="preserve">Νότες που απομένουν: </s:String>
+    <s:String x:Key="o.OverlapRate" xml:space="preserve">Ποσοστό: </s:String>
+    <s:String x:Key="o.Prereading">Προανάγνωση τμήματος {trackcount}</s:String>
+    <s:String x:Key="o.Parsingtrack">Φόρτωση τμήματος {trackcount}, {tracksize} bytes</s:String>
+    <s:String x:Key="o.Start">Έναρξη!</s:String>
+    <s:String x:Key="o.SuccessfullyOutput" xml:space="preserve">Επιτυχής αποθήκευση αρχείου στην τοποθεσία </s:String>
+    <!-- CJCMCG Strings -->
+    <s:String x:Key="m.CJCMCGtitle">Δημιουργός Μετρητή MIDI CJC</s:String>
+    <s:String x:Key="m.SelectFile">Επιλογή Αρχείου</s:String>
+    <s:String x:Key="m.Width">Πλάτος</s:String>
+    <s:String x:Key="m.Height">Ύψος</s:String>
+    <s:String x:Key="m.Fps">Καρέ ανά δευτερόλεπτο (FPS)</s:String>
+    <s:String x:Key="m.Preset">Ρύθμιση</s:String>
+    <s:String x:Key="m.Preview">Κείμενο Προεπισκόπησης</s:String>
+    <s:String x:Key="m.PatSel">Μοτίβο</s:String>
+    <s:String x:Key="m.FonSel">Γραμματοσειρά</s:String>
+    <s:String x:Key="m.FonSz">Μέγεθος γραμματοσειράς</s:String>
+    <s:String x:Key="m.Color">Χρώμα</s:String>
+    <s:String x:Key="m.Align">Στοίχιση</s:String>
+    <s:String x:Key="m.AlignUL">Πάνω Αριστερά</s:String>
+    <s:String x:Key="m.AlignUR">Πάνω Δεξιά</s:String>
+    <s:String x:Key="m.AlignUM">Πάνω Κέντρο</s:String>
+    <s:String x:Key="m.AlignDL">Κάτω Αριστερά</s:String>
+    <s:String x:Key="m.AlignDR">Κάτω Δεξιά</s:String>
+    <s:String x:Key="m.AlignDM">Κάτω Κέντρο</s:String>
+    <s:String x:Key="m.OutputToCjcmcg">Αποθήκευση μόνο προεπεξεργασμένου αρχείου</s:String>
+    <s:String x:Key="m.PatSv">Επεξεργασία Μοτίβων</s:String>
+    <s:String x:Key="m.ColorChg">Αλλαγή Χρώματος</s:String>
+    <s:String x:Key="m.OKkey">ΟΚ</s:String>
+    <s:String x:Key="m.ReadHelp">Οδηγίες χρήσης</s:String>
+    <s:String x:Key="m.Remove">Αφαίρεση</s:String>
+    <s:String x:Key="m.Savv">Αποθήκευση</s:String>
+    <s:String x:Key="m.Parsingtrack">Φόρτωση τμήματος {trackcount}, {tracksize} bytes</s:String>
+    <s:String x:Key="m.Start">Έναρξη!</s:String>
+    <s:String x:Key="m.Cancel">Ακύρωση</s:String>
+    <s:String x:Key="m.Finished">Ολοκλήρωση.</s:String>
+    <s:String x:Key="m.Failed">Αποτυχία.</s:String>
+    <s:String x:Key="m.Stopped">Σταματημένο.</s:String>
+    <s:String x:Key="m.ReadFinished">Η φόρτωση ολοκληρώθηκε. {notecnt} νότες.</s:String>
+    <s:String x:Key="m.FrameRender">Δημιουργήθηκαν {frames} καρέ, {fps} FPS</s:String>
+    <s:String x:Key="m.DelayStart">Καθυστέρηση Έναρξης (δευτερόλεπτα):</s:String>
+    <s:String x:Key="m.DetectedOld">Εντοπίστηκε ένα παλιό μοτίβο. Θέλετε να μετατραπεί σε καινούργιο;</s:String>
+    <s:String x:Key="m.ConvertFin">Η μετατροπή ολοκληρώθηκε. Θα θέλατε να αποθηκεύσετε;</s:String>
+    <s:String x:Key="m.UpdateOld">Ενημέρωση μοτίβου;</s:String>
+    <s:String x:Key="m.cjcmcg_help" xml:space="preserve">Το πρόγραμμα αυτό δημιουργήθηκε από τη CJC Apps. Παρακαλούμε να βεβαιωθείτε πως το αρχείο ffmpeg.exe βρίσκεται στον ίδιο φάκελο με το πρόγραμμα ή στην τοποθεσία C:\Windows\System32. Αν δεν το έχετε, παρακαλούμε να το προμηθευτείτε από τον ιστότοπο http://ffmpeg.org. Επιπλέον συνίσταται η λήψη του αρχείου xz.exe (απο τον ιστότοπο https://tukaani.org/xz) για την αποφυγή σφαλμάτων κατά την αποσυμπίεση των αρχείων MIDI.
+
+Βεβαιωθείτε πως έχετε εγκαταστήσει την Python 3, την έχετε προσθέσει στο PATH και έχετε εγκαταστήσει την Natsulang μέσω pip, ώστε αυτή να μπορεί να εκτελεθεί κανονικά.
+
+Το πρόγραμμα αυτό χρησιμοποιέι την Natsulang για την δημιουργία του μετρητή. Πρόκειται για μια γλώσσα επεξεργασίας κειμένου απο το CJC.
+
+Μπορείτε να δημιουργήσετε εντολές Natsulang με τις παρακάτω μεταβλητές:
+  frm: Τρέχον Καρέ (έναρξη μέτρησης από 0)
+  nc: Τρέχον Αριθμός Νοτών
+  an: Συνολικός Αριθμός Νοτών
+  bpm: Μέτρα ανά λεπτό
+  tm: Χρόνος (δευτερόλεπτα, συνίσταται η χρήση με δύο δεκαδικά ψηφία, δείτε τις οδηγείες παρακάτω)
+  nps: Νότες ανά Δευτερόλεπτο
+  pol: Πολυφωνία
+  tic: Τρέχον tick
+  ati: Συνολικός αριθμός tick
+  bts: Τρέχον μέτρο
+  abt: Συνολικός Αριθμός Μέτρων
+  ppq: Ανάλυση (PPQ)
+  lrc: Στίχοι
+  lrc_frm: Καρέ από την στιγμή που εμφανίστηκαν στίχοι (έναρξη μέτρησης από 0)
+
+Χρησιμοποιήστε &quot;{μεταβλητή}&quot; για να εμφανίσετε το περιεχόμενο της μεταβλητής. Μπορείτε επίσης να γράψετε εντολές για να κάνετε πιο περίπλοκους υπολογισμούς. Αν θέλετε να χωρίσετε έναν αριθμό με κόμμα ανά τρία ψηφία, χρησιμοποιήστε &quot;{format({number},',')}&quot;. Αν θέλετε να εμφανίσετε έναν αριθμό με δύο δεκαδικά ψηφία, χρησιμοποιήστε &quot;{format(tm,'.2f')}&quot;.
+
+Αν χρησιμοποιήσετε τον μετατροπέα σε κάποιο βίντεό σας, μην ξεχάσετε να το αναφέρετε ως εξής:
+Midi Counter rendered with CJCMCG by CJC Apps.
+https://github.com/Ace-tyl/CJC-Toolbox-Reborn</s:String>
+</ResourceDictionary>

@@ -6,23 +6,23 @@
         xmlns:mdfk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:CJCMCG"
         mc:Ignorable="d"
-        Title="{DynamicResource CJCMCGtitle}" Height="450" Width="800" MinHeight="300" MinWidth="700" Loaded="Window_Loaded" Icon="../Resources/CJCMCGicon.ico">
+        Title="{DynamicResource m.CJCMCGtitle}" Height="500" Width="950" MinHeight="300" MinWidth="850" Loaded="Window_Loaded" Icon="../Resources/CJCMCGicon.ico">
     <Grid>
-        <Button Margin="10,10,10,10" VerticalAlignment="Top" Height="25" Content="{DynamicResource SelectFile}" x:Name="filename" Click="filename_Click"/>
+        <Button Margin="10,10,10,10" VerticalAlignment="Top" Height="25" Content="{DynamicResource m.SelectFile}" x:Name="filename" Click="filename_Click"/>
         <DockPanel Height="25" LastChildFill="False" Margin="10,45,0,0" VerticalAlignment="Top">
-            <Label Content="{DynamicResource Width}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+            <Label Content="{DynamicResource m.Width}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
             <mdfk:DecimalUpDown x:Name="width" Value="1080" Increment="1" Maximum="1919810" Minimum="1" HorizontalAlignment="Left" Width="60" Height="25" VerticalAlignment="Top" DockPanel.Dock="Left" />
         </DockPanel>
         <DockPanel Height="25" LastChildFill="False" Margin="130,45,0,0" VerticalAlignment="Top">
-            <Label Content="{DynamicResource Height}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+            <Label Content="{DynamicResource m.Height}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
             <mdfk:DecimalUpDown x:Name="height" Value="320" Increment="1" Maximum="1919810" Minimum="1" HorizontalAlignment="Left" Width="60" Height="25" VerticalAlignment="Top" DockPanel.Dock="Left" />
         </DockPanel>
         <DockPanel Height="25" LastChildFill="False" Margin="250,45,0,0" VerticalAlignment="Top">
-            <Label Content="{DynamicResource Fps}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+            <Label Content="{DynamicResource m.Fps}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
             <mdfk:DecimalUpDown x:Name="fps" Value="60" Increment="1" Maximum="114514" Minimum="1" HorizontalAlignment="Left" Width="60" Height="25" VerticalAlignment="Top" DockPanel.Dock="Left" />
         </DockPanel>
-        <DockPanel Height="25" LastChildFill="False" Margin="400,45,0,0" VerticalAlignment="Top">
-            <Label Content="{DynamicResource Preset}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+        <DockPanel Height="25" LastChildFill="False" Margin="390,45,0,0" VerticalAlignment="Top">
+            <Label Content="{DynamicResource m.Preset}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
             <ComboBox x:Name="pres" HorizontalAlignment="Left" Width="90" Height="25" VerticalAlignment="Top" DockPanel.Dock="Left" SelectionChanged="pres_SelectionChanged">
                 <ComboBoxItem Content="1080x320" Uid="1080x320"/>
                 <ComboBoxItem Content="360P" Uid="360P"/>
@@ -36,44 +36,58 @@
                 <ComboBoxItem Content="32K" Uid="17280P"/>
             </ComboBox>
         </DockPanel>
-        <Button Margin="0,45,10,0" VerticalAlignment="Top" Height="25" HorizontalAlignment="Right" Width="150" Content="{DynamicResource ReadHelp}" Click="help_Click"/>
-        <DockPanel Margin="10,80,220,45" x:Name="Piliang">
+        <DockPanel Height="25" LastChildFill="False" Margin="550,45,0,0" VerticalAlignment="Top" x:Name="is_preprocess_block">
+            <CheckBox VerticalAlignment="Center" x:Name="is_preprocess" Content="{DynamicResource m.OutputToCjcmcg}"></CheckBox>
+        </DockPanel>
+        <Button Margin="0,45,10,0" VerticalAlignment="Top" Height="25" HorizontalAlignment="Right" Width="200" Content="{DynamicResource m.ReadHelp}" Click="help_Click"/>
+        <DockPanel Margin="10,80,270,45" x:Name="Piliang">
             <DockPanel VerticalAlignment="Top" Height="25" Margin="0,0,0,0" DockPanel.Dock="Top">
                 <DockPanel Height="25" LastChildFill="False" Margin="0,0,0,0" VerticalAlignment="Top">
-                    <Label Content="{DynamicResource PatSel}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+                    <Label Content="{DynamicResource m.PatSel}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
                     <ComboBox HorizontalAlignment="Left" Width="60" Height="25" VerticalAlignment="Top" DockPanel.Dock="Left" x:Name="pats" SelectionChanged="pats_SelectionChanged">
                     </ComboBox>
                 </DockPanel>
                 <DockPanel Height="25" LastChildFill="False" Margin="10,0,0,0" VerticalAlignment="Top">
-                    <Label Content="{DynamicResource FonSel}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+                    <Label Content="{DynamicResource m.FonSel}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
                     <ComboBox HorizontalAlignment="Left" SelectionChanged="fonts_SelectionChanged" Width="60" Height="25" VerticalAlignment="Top" DockPanel.Dock="Left" x:Name="font">
                     </ComboBox>
                 </DockPanel>
                 <DockPanel Height="25" LastChildFill="False" Margin="10,0,0,0" VerticalAlignment="Top">
-                    <Label Content="{DynamicResource FonSz}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+                    <Label Content="{DynamicResource m.FonSz}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
                     <mdfk:DecimalUpDown Value="20" Increment="1" Maximum="2333" Minimum="1"  HorizontalAlignment="Left" Width="60" Height="25" VerticalAlignment="Top" DockPanel.Dock="Left" x:Name="fsize">
                     </mdfk:DecimalUpDown>
                 </DockPanel>
                 <DockPanel Height="25" LastChildFill="False" Margin="10,0,0,0" VerticalAlignment="Top">
-                    <Label Content="{DynamicResource Color}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
-                    <Button HorizontalAlignment="Left" Uid="{DynamicResource UpdateOld}" Width="25" Height="25" Background="White" x:Name="color" Click="color_Click">
+                    <Label Content="{DynamicResource m.Color}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+                    <Button HorizontalAlignment="Left" Uid="{DynamicResource m.UpdateOld}" Width="25" Height="25" Background="White" x:Name="color" Click="color_Click">
                     </Button>
                 </DockPanel>
-                <Button Content="{DynamicResource PatSv}" Height="25" Margin="10,0,0,0" VerticalAlignment="Top" Click="Ere_Click"/>
+                <DockPanel Height="25" LastChildFill="False" Margin="10,0,0,0" VerticalAlignment="Top">
+                    <Label Content="{DynamicResource m.Align}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+                    <ComboBox HorizontalAlignment="Left" Width="80" Height="25" VerticalAlignment="Top" DockPanel.Dock="Left" x:Name="align">
+                        <ComboBoxItem Content="{DynamicResource m.AlignUL}" DataContext="UL" IsSelected="True" x:Name="UL"></ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource m.AlignUR}" DataContext="UR" x:Name="UR"></ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource m.AlignUM}" DataContext="UM" x:Name="UM"></ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource m.AlignDL}" DataContext="DL" x:Name="DL"></ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource m.AlignDR}" DataContext="DR" x:Name="DR"></ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource m.AlignDM}" DataContext="DM" x:Name="DM"></ComboBoxItem>
+                    </ComboBox>
+                </DockPanel>
+                <Button Content="{DynamicResource m.PatSv}" Height="25" Margin="10,0,0,0" VerticalAlignment="Top" Click="Ere_Click"/>
             </DockPanel>
-            <TextBox Margin="0,10,0,0" x:Name="pat" Uid="{DynamicResource DetectedOld}" FontFamily="Consolas" Text="Notes: {format(nc,',')}/{format(an,',')}" AcceptsReturn="True"/>
+            <TextBox Margin="0,10,0,0" x:Name="pat" Uid="{DynamicResource m.DetectedOld}" FontFamily="Consolas" Text="Notes: {format(nc,',')}/{format(an,',')}" AcceptsReturn="True"/>
         </DockPanel>
-        <DockPanel HorizontalAlignment="Right" Width="200" Margin="0,80,10,80">
+        <DockPanel HorizontalAlignment="Right" Width="250" Margin="0,80,10,80">
             <DockPanel VerticalAlignment="Top" Height="25" DockPanel.Dock="Top">
-                <Label Height="25" Content="{DynamicResource Preview}" VerticalAlignment="Top" Margin="0,0,0,0"/>
+                <Label Height="25" Content="{DynamicResource m.Preview}" VerticalAlignment="Top" Margin="0,0,0,0"/>
             </DockPanel>
-            <TextBox IsReadOnly="True" Uid="{DynamicResource ConvertFin}" FontFamily="Consolas" x:Name="preview" Margin="0,0,0,0"/>
+            <TextBox IsReadOnly="True" Uid="{DynamicResource m.ConvertFin}" FontFamily="Consolas" x:Name="preview" Margin="0,0,0,0"/>
         </DockPanel>
-        <DockPanel Height="25" LastChildFill="False" Margin="0,0,10,45" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="200">
-            <Label Content="{DynamicResource DelayStart}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+        <DockPanel Height="25" LastChildFill="False" Margin="0,0,10,45" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="250">
+            <Label Content="{DynamicResource m.DelayStart}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
             <mdfk:DecimalUpDown x:Name="des" Value="3" Increment="1" Maximum="114514" Minimum="0" HorizontalAlignment="Left" Width="60" Height="25" VerticalAlignment="Top" DockPanel.Dock="Left" />
         </DockPanel>
-        <Button VerticalAlignment="Bottom" Height="25" Margin="10,0,220,10" x:Name="prog" Uid="{DynamicResource Parsingtrack}" Content="{DynamicResource Start}" Click="progress_Click"/>
-        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" Margin="0,0,10,10" Width="200" x:Name="canc" Uid="{DynamicResource Parsingtrack}" Content="{DynamicResource Cancel}" IsEnabled="False" Click="canc_Click"/>
+        <Button VerticalAlignment="Bottom" Height="25" Margin="10,0,270,10" x:Name="prog" Uid="{DynamicResource m.Parsingtrack}" Content="{DynamicResource m.Start}" Click="progress_Click"/>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" Margin="0,0,10,10" Width="250" x:Name="canc" Uid="{DynamicResource m.Parsingtrack}" Content="{DynamicResource m.Cancel}" IsEnabled="False" Click="canc_Click"/>
     </Grid>
 </Window>

@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CJCMCG"
         mc:Ignorable="d"
-        Title="{DynamicResource PatSv}" Height="300" Width="200" ResizeMode="NoResize" Loaded="Window_Loaded" Icon="../Resources/CJCMCGicon.ico">
+        Title="{DynamicResource m.PatSv}" Height="300" Width="200" ResizeMode="NoResize" Loaded="Window_Loaded" Icon="../Resources/CJCMCGicon.ico">
     <Grid>
         <ListBox Margin="10,10,10,45" x:Name="ls"/>
-        <Button Content="{DynamicResource Remove}" Margin="10,0,105,10" VerticalAlignment="Bottom" Height="25" Click="RemoveClicked"/>
-        <Button Content="{DynamicResource Savv}" Margin="105,0,10,10" VerticalAlignment="Bottom" Height="25" Click="SaveClicked"/>
+        <Button Content="{DynamicResource m.Remove}" Margin="10,0,105,10" VerticalAlignment="Bottom" Height="25" Click="RemoveClicked"/>
+        <Button Content="{DynamicResource m.Savv}" Margin="105,0,10,10" VerticalAlignment="Bottom" Height="25" Click="SaveClicked"/>
     </Grid>
 </Window>

@@ -6,12 +6,12 @@
         xmlns:mdfk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:CJC_Advanced_Midi_Merger"
         mc:Ignorable="d"
-        Title="{DynamicResource SaveGroup}" Height="120" Width="200" ResizeMode="NoResize" Icon="../Resources/CJCAMMIcon.ico">
+        Title="{DynamicResource a.SaveGroup}" Height="120" Width="200" ResizeMode="NoResize" Icon="../Resources/CJCAMMIcon.ico">
     <Grid>
         <DockPanel Height="24" LastChildFill="False" Margin="10,-45,0,0">
-            <Label Content="{DynamicResource Setppq}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
+            <Label Content="{DynamicResource a.Setppq}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
             <mdfk:DecimalUpDown x:Name="ppq" Value="1920" Increment="1" Maximum="65535" Minimum="1" HorizontalAlignment="Left" Width="82" Height="24" VerticalAlignment="Top" DockPanel.Dock="Left" />
         </DockPanel>
-        <Button Content="{DynamicResource Save}" Margin="10,0,10,10" Height="30" VerticalAlignment="Bottom" Click="okclick"/>
+        <Button Content="{DynamicResource a.Save}" Margin="10,0,10,10" Height="30" VerticalAlignment="Bottom" Click="okclick"/>
     </Grid>
 </Window>

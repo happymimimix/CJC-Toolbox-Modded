@@ -1,87 +1,108 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:s="clr-namespace:System;assembly=mscorlib">
-    <s:String x:Key="MainTitle">CJC Toolbox Reborn</s:String>
-    <s:String x:Key="CJCAMMtitle">CJC Advanced Midi Merger</s:String>
-    <s:String x:Key="Add">Add</s:String>
-    <s:String x:Key="Remove">Remove</s:String>
-    <s:String x:Key="Clear">Clear</s:String>
-    <s:String x:Key="Settings">Settings</s:String>
-    <s:String x:Key="Info">Info</s:String>
-    <s:String x:Key="SaveGroup">Save Group</s:String>
-    <s:String x:Key="LoadGroup">Load Group</s:String>
-    <s:String x:Key="Start">Start!</s:String>
-    <s:String x:Key="Cancel">Cancel</s:String>
-    <s:String x:Key="Save">Save!</s:String>
-    <s:String x:Key="StartWindowtitle">Start Merge</s:String>
-    <s:String x:Key="InfoWindowtitle">Midi Information</s:String>
-    <s:String x:Key="MergingMidis">Merging Midis...</s:String>
-    <s:String x:Key="Setppq">Set PPQ</s:String>
-    <s:String x:Key="ImpBpm">Implace merge BPM to the first track</s:String>
-    <s:String x:Key="ImpMrg">Implace merge everything to a single track</s:String>
-    <s:String x:Key="RemBpm">Remove all BPM events</s:String>
-    <s:String x:Key="RemPC">Remove all program change events (Set all instruments to piano)</s:String>
-    <s:String x:Key="RemPB">Remove all pitch bend events</s:String>
-    <s:String x:Key="RemEpt">Remove empty tracks</s:String>
-    <s:String x:Key="TrsPpq">Convert the original PPQ to the main PPQ</s:String>
-    <s:String x:Key="Offst">Set offset (ticks)</s:String>
-    <s:String x:Key="MinvolFront">Remove notes with volume not greater than</s:String>
-    <s:String x:Key="MinvolBack">&#160;</s:String>
-    <s:String x:Key="OKkey">OK</s:String>
-    <s:String x:Key="Filename">File name:&#160;</s:String>
-    <s:String x:Key="Filesize">File size (bytes):&#160;</s:String>
-    <s:String x:Key="Trkcnt">Track count:&#160;</s:String>
-    <s:String x:Key="OriginalPpq">Original PPQ:&#160;</s:String>
-    <s:String x:Key="Notecount">Note count:&#160;</s:String>
-    <s:String x:Key="Midilen">Midi length (ticks):&#160;</s:String>
-    <s:String x:Key="Getmoreinfo">Get more information</s:String>
-    <s:String x:Key="Finished">Finished.</s:String>
-    <s:String x:Key="Failed">Failed.</s:String>
-    <s:String x:Key="Stopped">Stopped.</s:String>
-    <s:String x:Key="Parsingtrack">Parsing track {trackcount}, {tracksize} bytes</s:String>
-    <s:String x:Key="UnableGroup">Unable to get more information on group files</s:String>
-    <s:String x:Key="Clickgetinfo">(Click "Get more information" below to get)</s:String>
-    <s:String x:Key="ProcessedTracks">Processed {trks} tracks, written {wrtt} tracks...</s:String>
-    <s:String x:Key="clearwarn">Do you really want to clear the list?</s:String>
-    <s:String x:Key="Lang">Language:</s:String>
-    <s:String x:Key="CJCAMMInfo" xml:space="preserve">CJC Advanced Midi Merger&#10;A software used to merge several MIDIs and show the information of a MIDI.&#10;Made by HuaChaoChaoDaYe.</s:String>
-    <s:String x:Key="CJCORInfo" xml:space="preserve">CJC Overlap Remover&#10;A software used to remove the overlaps in a MIDI.&#10;Made by HuaChaoChaoDaYe.</s:String>
-    <s:String x:Key="Version" xml:space="preserve">Version&#32;</s:String>
-    <s:String x:Key="CJCORtitle">CJC Overlap Remover</s:String>
-    <s:String x:Key="AudioRender">Use audio render (higher audio quality, but lower speed)</s:String>
-    <s:String x:Key="NotesRemain" xml:space="preserve">Notes remaining:&#32;</s:String>
-    <s:String x:Key="OverlapRate" xml:space="preserve">Rate:&#32;</s:String>
-    <s:String x:Key="Prereading">Prereading track {trackcount}</s:String>
-    <s:String x:Key="SuccessfullyOutput" xml:space="preserve">Successfully outputted file to&#32;</s:String>
-    <s:String x:Key="CJCMCGtitle">CJC Midi Counter Generator</s:String>
-    <s:String x:Key="CJCMCGInfo" xml:space="preserve">CJC Midi Counter Generator&#10;The representative work of CJC Apps. A software used to generate a counter of a MIDI.&#10;Made by HuaChaoChaoDaYe and Shuangsheng Blackfans Club.</s:String>
-    <s:String x:Key="SelectFile">Select File</s:String>
-    <s:String x:Key="Width">Width</s:String>
-    <s:String x:Key="Height">Height</s:String>
-    <s:String x:Key="Fps">FPS</s:String>
-    <s:String x:Key="Preset">Preset</s:String>
-    <s:String x:Key="Preview">Preview Text</s:String>
-    <s:String x:Key="PatSel">Pattern</s:String>
-    <s:String x:Key="FonSel">Font</s:String>
-    <s:String x:Key="FonSz">Font Size</s:String>
-    <s:String x:Key="Color">Color</s:String>
-    <s:String x:Key="PatSv">Edit Patterns</s:String>
-    <s:String x:Key="ColorChg">Change Color</s:String>
-    <s:String x:Key="ReadHelp">Instructions to use</s:String>
-    <s:String x:Key="Savv">Save</s:String>
-    <s:String x:Key="ReadFinished">Reading finished. {notecnt} notes.</s:String>
-    <s:String x:Key="FrameRender">Rendered {frames} frames</s:String>
-    <s:String x:Key="DelayStart">Delay Start (sec):</s:String>
-    <s:String x:Key="DetectedOld">Detected this is an old pattern. Convert to new pattern?</s:String>
-    <s:String x:Key="ConvertFin">Convert finished. Save?</s:String>
-    <s:String x:Key="UpdateOld">Update pattern?</s:String>
-    <s:String x:Key="cjcmcg_help" xml:space="preserve">This software is made by CJC Apps. Please make sure that there is a ffmpeg.exe in the same folder as the program or in C:\Windows\System32. If you don't have it, please download at http://ffmpeg.org . It is also recommended to download an xz.exe in order to avoid exceptions while decompressing MIDI.
+    <s:String x:Key=".MainTitle">CJC Toolbox</s:String>
+    <!-- CJCAMM Strings -->
+    <s:String x:Key="a.CJCAMMtitle">CJC Advanced Midi Merger</s:String>
+    <s:String x:Key="a.Add">Add</s:String>
+    <s:String x:Key="a.Remove">Remove</s:String>
+    <s:String x:Key="a.Clear">Clear</s:String>
+    <s:String x:Key="a.Settings">Settings</s:String>
+    <s:String x:Key="a.Info">Info</s:String>
+    <s:String x:Key="a.SaveGroup">Save Group</s:String>
+    <s:String x:Key="a.LoadGroup">Load Group</s:String>
+    <s:String x:Key="a.Start">Start!</s:String>
+    <s:String x:Key="a.Cancel">Cancel</s:String>
+    <s:String x:Key="a.Save">Save!</s:String>
+    <s:String x:Key="a.StartWindowtitle">Start Merge</s:String>
+    <s:String x:Key="a.InfoWindowtitle">Midi Information</s:String>
+    <s:String x:Key="a.MergingMidis">Merging Midis...</s:String>
+    <s:String x:Key="a.Setppq">Set PPQ</s:String>
+    <s:String x:Key="a.ImpBpm">Implace merge BPM to the first track</s:String>
+    <s:String x:Key="a.ImpMrg">Implace merge everything to a single track</s:String>
+    <s:String x:Key="a.RemBpm">Remove all BPM events</s:String>
+    <s:String x:Key="a.RemPC">Remove all program change events (Set all instruments to piano)</s:String>
+    <s:String x:Key="a.RemPB">Remove all pitch bend events</s:String>
+    <s:String x:Key="a.RemEpt">Remove empty tracks</s:String>
+    <s:String x:Key="a.TrsPpq">Convert the original PPQ to the main PPQ</s:String>
+    <s:String x:Key="a.Offst">Set offset (ticks)</s:String>
+    <s:String x:Key="a.MinvolFront">Remove notes with volume not greater than</s:String>
+    <s:String x:Key="a.OKkey">OK</s:String>
+    <s:String x:Key="a.Filename">File name:&#160;</s:String>
+    <s:String x:Key="a.Filesize">File size (bytes):&#160;</s:String>
+    <s:String x:Key="a.Trkcnt">Track count:&#160;</s:String>
+    <s:String x:Key="a.OriginalPpq">Original PPQ:&#160;</s:String>
+    <s:String x:Key="a.Notecount">Note count:&#160;</s:String>
+    <s:String x:Key="a.Midilen">Midi length (ticks):&#160;</s:String>
+    <s:String x:Key="a.Getmoreinfo">Get more information</s:String>
+    <s:String x:Key="a.Finished">Finished.</s:String>
+    <s:String x:Key="a.Failed">Failed.</s:String>
+    <s:String x:Key="a.Stopped">Stopped.</s:String>
+    <s:String x:Key="a.Parsingtrack">Parsing track {trackcount}, {tracksize} bytes</s:String>
+    <s:String x:Key="a.UnableGroup">Unable to get more information on group files</s:String>
+    <s:String x:Key="a.Clickgetinfo">(Click "Get more information" below to get)</s:String>
+    <s:String x:Key="a.ProcessedTracks">Processed {trks} tracks, written {wrtt} tracks...</s:String>
+    <s:String x:Key="a.clearwarn">Do you really want to clear the list?</s:String>
+    <!-- CJC Toolbox Home Page Strings -->
+    <s:String x:Key=".Lang">Language:</s:String>
+    <s:String x:Key=".CJCAMMInfo" xml:space="preserve">CJC Advanced Midi Merger&#10;A software used to merge several MIDIs and show the information of a MIDI.</s:String>
+    <s:String x:Key=".CJCORInfo" xml:space="preserve">CJC Overlap Remover&#10;A software used to remove the overlaps in a MIDI.</s:String>
+    <s:String x:Key=".CJCMCGInfo" xml:space="preserve">CJC Midi Counter Generator&#10;The representative work of CJC Apps. A software used to generate a counter of a MIDI.</s:String>
+    <s:String x:Key=".Version" xml:space="preserve">Version&#32;</s:String>
+    <!-- CJCOR Strings -->
+    <s:String x:Key="o.CJCORtitle">CJC Overlap Remover</s:String>
+    <s:String x:Key="o.AudioRender">Use audio render (higher audio quality, but lower speed)</s:String>
+    <s:String x:Key="o.NotesRemain" xml:space="preserve">Notes remaining:&#32;</s:String>
+    <s:String x:Key="o.OverlapRate" xml:space="preserve">Rate:&#32;</s:String>
+    <s:String x:Key="o.Prereading">Prereading track {trackcount}</s:String>
+    <s:String x:Key="o.Parsingtrack">Parsing track {trackcount}, {tracksize} bytes</s:String>
+    <s:String x:Key="o.Start">Start!</s:String>
+    <s:String x:Key="o.SuccessfullyOutput" xml:space="preserve">Successfully outputted file to&#32;</s:String>
+    <!-- CJCMCG Strings -->
+    <s:String x:Key="m.CJCMCGtitle">CJC Midi Counter Generator</s:String>
+    <s:String x:Key="m.SelectFile">Select File</s:String>
+    <s:String x:Key="m.Width">Width</s:String>
+    <s:String x:Key="m.Height">Height</s:String>
+    <s:String x:Key="m.Fps">FPS</s:String>
+    <s:String x:Key="m.Preset">Preset</s:String>
+    <s:String x:Key="m.Preview">Preview Text</s:String>
+    <s:String x:Key="m.PatSel">Pattern</s:String>
+    <s:String x:Key="m.FonSel">Font</s:String>
+    <s:String x:Key="m.FonSz">Font Size</s:String>
+    <s:String x:Key="m.Color">Color</s:String>
+    <s:String x:Key="m.Align">Align</s:String>
+    <s:String x:Key="m.AlignUL">Top Left</s:String>
+    <s:String x:Key="m.AlignUR">Top Right</s:String>
+    <s:String x:Key="m.AlignUM">Top Center</s:String>
+    <s:String x:Key="m.AlignDL">Bottom Left</s:String>
+    <s:String x:Key="m.AlignDR">Bottom Right</s:String>
+    <s:String x:Key="m.AlignDM">Bottom Center</s:String>
+    <s:String x:Key="m.OutputToCjcmcg">Preprocess file only</s:String>
+    <s:String x:Key="m.PatSv">Edit Patterns</s:String>
+    <s:String x:Key="m.ColorChg">Change Color</s:String>
+    <s:String x:Key="m.OKkey">OK</s:String>
+    <s:String x:Key="m.ReadHelp">Instructions to use</s:String>
+    <s:String x:Key="m.Remove">Remove</s:String>
+    <s:String x:Key="m.Savv">Save</s:String>
+    <s:String x:Key="m.Parsingtrack">Parsing track {trackcount}, {tracksize} bytes</s:String>
+    <s:String x:Key="m.Start">Start!</s:String>
+    <s:String x:Key="m.Cancel">Cancel</s:String>
+    <s:String x:Key="m.Finished">Finished.</s:String>
+    <s:String x:Key="m.Failed">Failed.</s:String>
+    <s:String x:Key="m.Stopped">Stopped.</s:String>
+    <s:String x:Key="m.ReadFinished">Reading finished. {notecnt} notes.</s:String>
+    <s:String x:Key="m.FrameRender">Rendered {frames} frames, {fps} FPS</s:String>
+    <s:String x:Key="m.DelayStart">Delay Start (sec):</s:String>
+    <s:String x:Key="m.DetectedOld">Detected this is an old pattern. Convert to new pattern?</s:String>
+    <s:String x:Key="m.ConvertFin">Convert finished. Save?</s:String>
+    <s:String x:Key="m.UpdateOld">Update pattern?</s:String>
+    <s:String x:Key="m.cjcmcg_help" xml:space="preserve">This software is made by CJC Apps. Please make sure that there is a ffmpeg.exe in the same folder as the program or in C:\Windows\System32. If you don't have it, please download at http://ffmpeg.org . It is also recommended to download an xz.exe (from https://tukaani.org/xz) in order to avoid exceptions while decompressing MIDI.
 
-Make sure you have installed Python 3, added it to PATH and installed natsulang with pip, in order to run natsulang normally.
+Make sure you have installed Python 3, added it to PATH and installed Natsulang with pip, in order to run Natsulang normally.
 
-The program uses natsulang to generate the counter. It is a text-processing language by Shuangsheng Blackfans Club.
+The program uses Natsulang to generate the counter. It is a text-processing language by CJC.
 
-You can make natsulang programs with variables below:
+You can make Natsulang programs with variables below:
   frm: Current video frame (start from 0)
   nc: Note Count
   an: All notes
@@ -101,5 +122,5 @@ You can use "{variable}" to output the value of the variable. You can also input
 
 If you use this counter in your video, don't forget to credit us like this:
 Midi Counter rendered with CJCMCG by CJC Apps.
-CJC Apps website: http://kin.moe/</s:String>
+https://github.com/Ace-tyl/CJC-Toolbox-Reborn</s:String>
 </ResourceDictionary>

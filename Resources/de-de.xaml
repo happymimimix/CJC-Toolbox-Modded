@@ -1,0 +1,126 @@
+﻿<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key=".MainTitle">CJC Toolbox</s:String>
+    <!-- CJCAMM Strings -->
+    <s:String x:Key="a.CJCAMMtitle">CJC Advanced Midi Merger</s:String>
+    <s:String x:Key="a.Add">Hinzufügen</s:String>
+    <s:String x:Key="a.Remove">Entfernen</s:String>
+    <s:String x:Key="a.Clear">Leeren</s:String>
+    <s:String x:Key="a.Settings">Einstellungen</s:String>
+    <s:String x:Key="a.Info">Info</s:String>
+    <s:String x:Key="a.SaveGroup">Gruppe speichern</s:String>
+    <s:String x:Key="a.LoadGroup">Gruppe laden</s:String>
+    <s:String x:Key="a.Start">Starten!</s:String>
+    <s:String x:Key="a.Cancel">Abbrechen</s:String>
+    <s:String x:Key="a.Save">Speichern!</s:String>
+    <s:String x:Key="a.StartWindowtitle">Zusammenführung starten</s:String>
+    <s:String x:Key="a.InfoWindowtitle">Midi-Informationen</s:String>
+    <s:String x:Key="a.MergingMidis">Midis zusammenführen...</s:String>
+    <s:String x:Key="a.Setppq">PPQ festlegen</s:String>
+    <s:String x:Key="a.ImpBpm">BPM in einer Spur zusammenführen</s:String>
+    <s:String x:Key="a.ImpMrg">Alles zu einer Spur zusammenführen</s:String>
+    <s:String x:Key="a.RemBpm">Alle BPM-Ereignisse entfernen</s:String>
+    <s:String x:Key="a.RemPC">Entferne alle Programmwechsel-Ereignisse (Setze alle Instrumente auf Klavier)</s:String>
+    <s:String x:Key="a.RemPB">Entferne alle Pitch-Bend-Ereignisse</s:String>
+    <s:String x:Key="a.RemEpt">Entferne leere Tracks</s:String>
+    <s:String x:Key="a.TrsPpq">Konvertiere das originale PPQ zum Haupt-PPQ</s:String>
+    <s:String x:Key="a.Offst">Offset setzen (Ticks)</s:String>
+    <s:String x:Key="a.MinvolFront">Entferne Noten mit Lautstärke nicht höher als</s:String>
+    <s:String x:Key="a.OKkey">Ok</s:String>
+    <s:String x:Key="a.Filename">Dateiname: </s:String>
+    <s:String x:Key="a.Filesize">Dateigröße (Bytes): </s:String>
+    <s:String x:Key="a.Trkcnt">Spuranzahl: </s:String>
+    <s:String x:Key="a.OriginalPpq">Originales PPQ: </s:String>
+    <s:String x:Key="a.Notecount">Anzahl der Noten: </s:String>
+    <s:String x:Key="a.Midilen">Midi Länge (ticks): </s:String>
+    <s:String x:Key="a.Getmoreinfo">Mehr Informationen erhalten</s:String>
+    <s:String x:Key="a.Finished">Fertig.</s:String>
+    <s:String x:Key="a.Failed">Fehlgeschlagen.</s:String>
+    <s:String x:Key="a.Stopped">Gestoppt.</s:String>
+    <s:String x:Key="a.Parsingtrack">Analysiere Spur {trackcount}, {tracksize} Bytes</s:String>
+    <s:String x:Key="a.UnableGroup">Konnte keine weiteren Informationen zu Gruppendateien erhalten</s:String>
+    <s:String x:Key="a.Clickgetinfo">(Klicke auf &quot;Mehr Informationen erhalten&quot;, um zu erhalten)</s:String>
+    <s:String x:Key="a.ProcessedTracks">{trks} Spuren verarbeitet, {wrtt} Spuren geschrieben...</s:String>
+    <s:String x:Key="a.clearwarn">Liste wirklich leeren?</s:String>
+    <!-- CJC Toolbox Home Page Strings -->
+    <s:String x:Key=".Lang">Sprache:</s:String>
+    <s:String x:Key=".CJCAMMInfo" xml:space="preserve">CJC Advanced Midi Merger
+Eine Software, die mehrere MIDIs zusammenführt, und die Informationen davon anzeigt.</s:String>
+    <s:String x:Key=".CJCORInfo" xml:space="preserve">CJC Overlap Remover
+Eine Software, die Überlappungen in MIDIs entfernt.</s:String>
+    <s:String x:Key=".CJCMCGInfo" xml:space="preserve">CJC Midi Counter Generator
+Die repräsentative Arbeit der CJC Apps. Eine Software, die einen Counter eines MIDIs generiert.</s:String>
+    <s:String x:Key=".Version" xml:space="preserve">Version </s:String>
+    <!-- CJCOR Strings -->
+    <s:String x:Key="o.CJCORtitle">CJC Overlap Remover</s:String>
+    <s:String x:Key="o.AudioRender">Nutze Audio-Render (Höhere Audioqualität, langsamere Geschwindigkeit)</s:String>
+    <s:String x:Key="o.NotesRemain" xml:space="preserve">Noten verbleibend: </s:String>
+    <s:String x:Key="o.OverlapRate" xml:space="preserve">Rate: </s:String>
+    <s:String x:Key="o.Prereading">Spur {trackcount} voraus lesen</s:String>
+    <s:String x:Key="o.Parsingtrack">Analysiere Spur {trackcount}, {tracksize} Bytes</s:String>
+    <s:String x:Key="o.Start">Starten!</s:String>
+    <s:String x:Key="o.SuccessfullyOutput" xml:space="preserve">Datei erfolgreich exportiert bei </s:String>
+    <!-- CJCMCG Strings -->
+    <s:String x:Key="m.CJCMCGtitle">CJC Midi Counter Generator</s:String>
+    <s:String x:Key="m.SelectFile">Datei auswählen</s:String>
+    <s:String x:Key="m.Width">Breite</s:String>
+    <s:String x:Key="m.Height">Höhe</s:String>
+    <s:String x:Key="m.Fps">FPS</s:String>
+    <s:String x:Key="m.Preset">Voreinstellung</s:String>
+    <s:String x:Key="m.Preview">Vorschautext</s:String>
+    <s:String x:Key="m.PatSel">Schema</s:String>
+    <s:String x:Key="m.FonSel">Schriftart</s:String>
+    <s:String x:Key="m.FonSz">Schriftgröße</s:String>
+    <s:String x:Key="m.Color">Farbe</s:String>
+    <s:String x:Key="m.Align">Ausrichtung</s:String>
+    <s:String x:Key="m.AlignUL">Oben Links</s:String>
+    <s:String x:Key="m.AlignUR">Oben Rechts</s:String>
+    <s:String x:Key="m.AlignUM">Oben Mitte</s:String>
+    <s:String x:Key="m.AlignDL">Unten Links</s:String>
+    <s:String x:Key="m.AlignDR">Unten Rechts</s:String>
+    <s:String x:Key="m.AlignDM">Unten Mitte</s:String>
+    <s:String x:Key="m.OutputToCjcmcg">Datei nur vorbereiten</s:String>
+    <s:String x:Key="m.PatSv">Schemen bearbeiten</s:String>
+    <s:String x:Key="m.ColorChg">Farbe ändern</s:String>
+    <s:String x:Key="m.OKkey">Ok</s:String>
+    <s:String x:Key="m.ReadHelp">Anleitung</s:String>
+    <s:String x:Key="m.Remove">Entfernen</s:String>
+    <s:String x:Key="m.Savv">Speichern</s:String>
+    <s:String x:Key="m.Parsingtrack">Analysiere Spur {trackcount}, {tracksize} Bytes</s:String>
+    <s:String x:Key="m.Start">Starten!</s:String>
+    <s:String x:Key="m.Cancel">Abbrechen</s:String>
+    <s:String x:Key="m.Finished">Fertig.</s:String>
+    <s:String x:Key="m.Failed">Fehlgeschlagen.</s:String>
+    <s:String x:Key="m.Stopped">Gestoppt.</s:String>
+    <s:String x:Key="m.ReadFinished">Lesen beendet. {notecnt} Noten.</s:String>
+    <s:String x:Key="m.FrameRender">{frames} Frames gerendert, {fps} FPS</s:String>
+    <s:String x:Key="m.DelayStart">Verzögerung des Startes (sek):</s:String>
+    <s:String x:Key="m.DetectedOld">Altes Schema erkannt. Zu neuem Schema konvertieren?</s:String>
+    <s:String x:Key="m.ConvertFin">Konvertierung fertig. Speichern?</s:String>
+    <s:String x:Key="m.UpdateOld">Schema aktualisieren?</s:String>
+    <s:String x:Key="m.cjcmcg_help" xml:space="preserve">Diese Software wurde von CJC Apps entwickelt. ffmpeg.exe sollte sich in dem gleichen Ordner wie dieses Programm, oder in C:\Windows\System32 befinden. Wenn es nicht vorhanden ist, kann es bei http://ffmpeg.org heruntergeladen werden. Es wird auch empfohlen, ein xz.exe (von https://tukaani.org/xz) herunterzuladen, um Ausnahmen bei der Entkomprimierung von MIDIs zu vermeiden.
+
+Python 3 muss installiert sein, zu PATH hinzugefügt, und Natsuland mit pip installiert sein, um Natsuland normal laufen zu lassen.
+
+Natsuland-Programme können mit unteren Variablen erstellt werden:
+  frm: Aktueller Video-Frame (Beginn bei 0)
+  nc: Notenzahl
+  an: Alle Noten
+  bpm: Schläge pro Minute
+  tm: Zeit (Sekunden, Ausgabe mit 2 Kommastellen wird empfohlen, siehe Anweisungen unten)
+  nps: Noten pro Sekunde
+  pol: Polyphonie
+  tic: Tick
+  ati: Alle ticks
+  bts: Schläge
+  abt: Alle Schläge
+  ppq: Auflösung (PPQ)
+  lrc: Liedtext
+  lrc_frm: Einzelbilder seit dieser Liedtext erscheint (Start bei 0)
+
+&quot;{variable}&quot; kann genutzt werden, um den Wert der Variable Auszugeben. Ausdrücke können genutzt werden, um komplexe Berechnungen zu machen. &quot;{format({number},',')}&quot; wird genutzt, um eine Zahl mit Komma alle 3 Stellen zu Generieren. &quot;{format(tm,'.2f')}&quot; kann genutzt werden, um Zeit mit 2 Kommastellen Auszugeben.
+
+Wenn dieser Counter in einem Video genutzt wird, muss folgenes vorhanden sein: 
+Midi Counter rendered with CJCMCG by CJC Apps.
+https://github.com/Ace-tyl/CJC-Toolbox-Reborn</s:String>
+</ResourceDictionary>

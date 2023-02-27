@@ -17,6 +17,8 @@ namespace CJCMCG
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             tuichu_zhengchangly = true;
+            str.Text = str.Text.Replace("/", "/1");
+            str.Text = str.Text.Replace("\\", "/2");
             Close();
         }
     }

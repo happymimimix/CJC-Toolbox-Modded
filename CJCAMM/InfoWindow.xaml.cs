@@ -45,7 +45,7 @@ namespace CJC_Advanced_Midi_Merger
                 }
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    progress.SetResourceReference(ContentProperty, "Parsingtrack");
+                    progress.SetResourceReference(ContentProperty, "a.Parsingtrack");
                     string str = (string)progress.Content;
                     str = str.Replace("{trackcount}", (trk + 1).ToString());
                     str = str.Replace("{tracksize}", len.ToString("N0"));
@@ -177,7 +177,7 @@ namespace CJC_Advanced_Midi_Merger
             {
                 notecnt.Text = nc.ToString("N0");
                 midilen.Text = tm.ToString("N0");
-                progress.SetResourceReference(ContentProperty, "Finished");
+                progress.SetResourceReference(ContentProperty, "a.Finished");
             }));
         }
         public void GetInfoClicked(object sender, RoutedEventArgs e)
@@ -218,7 +218,7 @@ namespace CJC_Advanced_Midi_Merger
                 ppq = ppq * 256 + st.ReadByte();
                 trkcnt.Text = Convert.ToString(ppq);
                 progress.IsEnabled = false;
-                progress.SetResourceReference(ContentProperty, "UnableGroup");
+                progress.SetResourceReference(ContentProperty, "a.UnableGroup");
                 notecnt.Text = "";
                 midilen.Text = "";
             }

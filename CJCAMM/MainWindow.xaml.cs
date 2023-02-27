@@ -535,11 +535,11 @@ namespace CJC_Advanced_Midi_Merger
                     ShowInTaskbar = false,
                     Owner = this
                 };
-                Thread th = new Thread(rw.StartMerge)
+                rw.thread = new Thread(rw.StartMerge)
                 {
                     IsBackground = true
                 };
-                th.Start();
+                rw.thread.Start();
                 rw.ShowDialog();
             }
             catch

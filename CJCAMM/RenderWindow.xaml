@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CJC_Advanced_Midi_Merger"
         mc:Ignorable="d"
-        Title="{DynamicResource MergingMidis}" Height="80" Width="400" ResizeMode="NoResize" Icon="../Resources/CJCAMMIcon.ico">
-    <TextBlock x:Name="Progress" Margin="10,10,10,10" TextWrapping="NoWrap" Text="Software by CJC Apps. Code by HuaChaoChaoDaYe." DataContext="{DynamicResource ProcessedTracks}"/>
+        Title="{DynamicResource a.MergingMidis}" Height="80" Width="400" ResizeMode="NoResize" Icon="../Resources/CJCAMMIcon.ico" Closed="Window_Closed">
+    <TextBlock x:Name="Progress" Margin="10,10,10,10" TextWrapping="NoWrap" Text="Software by CJC Apps. Code by CJC." DataContext="{DynamicResource a.ProcessedTracks}"/>
 </Window>

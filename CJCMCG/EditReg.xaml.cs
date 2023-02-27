@@ -13,22 +13,23 @@ namespace CJCMCG
     {
         public uint col;
         public string ff, pat;
-        public int fs;
+        public int fs, al;
         public EditReg()
         {
             InitializeComponent();
         }
         public void RemoveClicked(object sender, RoutedEventArgs e)
         {
+            if (ls.SelectedItem == null) { return; }
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\CJCMCG", true);
-            key.DeleteSubKeyTree((string)((ListBoxItem)ls.SelectedItem).Content);
+            key.DeleteSubKeyTree(((string)((ListBoxItem)ls.SelectedItem).Content).Replace("/", "/1").Replace("\\", "/2"));
             ls.Items.Clear();
             string[] nm = key.GetSubKeyNames();
             foreach (string s in nm)
             {
                 ListBoxItem item = new ListBoxItem
                 {
-                    Content = s
+                    Content = s.Replace("/2", "\\").Replace("/1", "/")
                 };
                 ls.Items.Add(item);
             }
@@ -57,6 +58,7 @@ namespace CJCMCG
             long cc = col;
             key.SetValue("Color", Convert.ToInt32(cc >= (1L << 31) ? cc - (1L << 32) : cc), RegistryValueKind.DWord);
             key.SetValue("Pattern", pat, RegistryValueKind.String);
+            key.SetValue("Align", al, RegistryValueKind.DWord);
             key = Registry.CurrentUser.OpenSubKey(@"Software\CJCMCG");
             ls.Items.Clear();
             string[] nm = key.GetSubKeyNames();
@@ -64,7 +66,7 @@ namespace CJCMCG
             {
                 ListBoxItem item = new ListBoxItem
                 {
-                    Content = s
+                    Content = s.Replace("/2", "\\").Replace("/1", "/")
                 };
                 ls.Items.Add(item);
             }
@@ -78,7 +80,7 @@ namespace CJCMCG
             {
                 ListBoxItem item = new ListBoxItem
                 {
-                    Content = s
+                    Content = s.Replace("/2", "\\").Replace("/1", "/")
                 };
                 ls.Items.Add(item);
             }

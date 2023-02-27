@@ -90,7 +90,7 @@ namespace CJCOR
                     }
                     Dispatcher.Invoke(new Action(() =>
                     {
-                        Progress.SetResourceReference(ContentProperty, "Prereading");
+                        Progress.SetResourceReference(ContentProperty, "o.Prereading");
                         Progress.Content = ((string)(Progress.Content)).Replace("{trackcount}", (trk + 1).ToString() + "/" + trkcnt.ToString());
                     }));
                     int lstcmd = 256;
@@ -250,7 +250,7 @@ namespace CJCOR
                     trkpos[trkcnt - trk - 1] = inp.Position;
                     Dispatcher.Invoke(new Action(() =>
                     {
-                        Progress.SetResourceReference(ContentProperty, "Prereading");
+                        Progress.SetResourceReference(ContentProperty, "o.Prereading");
                         Progress.Content = ((string)(Progress.Content)).Replace("{trackcount}", (trk + 1).ToString() + "/" + trkcnt.ToString());
                     }));
                     st.ReadByte(); st.ReadByte(); st.ReadByte(); st.ReadByte();
@@ -279,7 +279,7 @@ namespace CJCOR
                 }
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    Progress.SetResourceReference(ContentProperty, "Parsingtrack");
+                    Progress.SetResourceReference(ContentProperty, "o.Parsingtrack");
                     Progress.Content = ((string)(Progress.Content)).Replace("{trackcount}", (trk + 1).ToString() + "/" + trkcnt.ToString());
                     Progress.Content = ((string)(Progress.Content)).Replace("{tracksize}", leng.ToString());
                 }));
@@ -766,7 +766,7 @@ namespace CJCOR
             Dispatcher.Invoke(new Action(() =>
             {
                 Progress.IsEnabled = true;
-                Progress.SetResourceReference(ContentProperty, "Start");
+                Progress.SetResourceReference(ContentProperty, "o.Start");
             }));
         }
         [STAThread]

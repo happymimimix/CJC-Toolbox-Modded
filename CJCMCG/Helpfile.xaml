@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CJCMCG"
         mc:Ignorable="d"
-        Title="{DynamicResource ReadHelp}" Height="450" Width="300" ResizeMode="CanMinimize">
+        Title="{DynamicResource m.ReadHelp}" Height="450" Width="300" ResizeMode="CanMinimize">
     <Grid>
-        <TextBox IsReadOnly="True" Text="{DynamicResource cjcmcg_help}" Margin="10,10,10,10" TextWrapping="Wrap"/>
+        <TextBox IsReadOnly="True" Text="{DynamicResource m.cjcmcg_help}" Margin="10,10,10,10" TextWrapping="Wrap"/>
     </Grid>
 </Window>
