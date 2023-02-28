@@ -1141,7 +1141,7 @@ namespace CJC_Advanced_Midi_Merger
                     ous.WriteByte((byte)(lens % 256));
                     trks++;
                     ous.Write(tmp);
-                    tmp.Clear();
+                    tmp = new List<byte>();
                     tmp2 = new List<byte>();
                     tmp3 = new List<byte>();
                     Dispatcher.Invoke(new Action(() =>

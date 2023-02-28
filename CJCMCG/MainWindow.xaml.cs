@@ -293,6 +293,29 @@ namespace CJCMCG
             preview.FontFamily = new System.Windows.Media.FontFamily(((ComboBoxItem)(font.SelectedItem)).Uid);
         }
 
+        private bool test_exist_natsulang(string proc, string prod)
+        {
+            try
+            {
+                Process ffmpeg = new Process
+                {
+                    StartInfo = new ProcessStartInfo(proc, prod)
+                    {
+                        RedirectStandardInput = false,
+                        CreateNoWindow = true,
+                        UseShellExecute = false,
+                        RedirectStandardError = false
+                    }
+                };
+                ffmpeg.Start();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try
@@ -311,26 +334,12 @@ namespace CJCMCG
             }
             catch (Exception)
             {
-                MessageBox.Show("There was an error finding ffmpeg.\nIs ffmpeg.exe in the same folder as this program?");
+                MessageBox.Show("There was an error finding ffmpeg.\nPlease place ffmpeg.exe in the same folder as this program or in C:\\Windows\\System32.");
                 Close();
             }
-            try
+            if (!test_exist_natsulang("natsulang", "-h") && !test_exist_natsulang("py", "-m natsulang.__init__ -h"))
             {
-                Process ffmpeg = new Process
-                {
-                    StartInfo = new ProcessStartInfo("natsulang", "-h")
-                    {
-                        RedirectStandardInput = false,
-                        CreateNoWindow = true,
-                        UseShellExecute = false,
-                        RedirectStandardError = false
-                    }
-                };
-                ffmpeg.Start();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("There was an error finding natsulang.\nPlease install Python 3 and type 'pip install natsulang' to install.");
+                MessageBox.Show("There was an error finding natsulang.\nPlease install Python 3 and type 'pip install natsulang' or 'py -m pip install natsulang' to install.");
                 Close();
             }
             System.Drawing.Text.InstalledFontCollection fonts = new System.Drawing.Text.InstalledFontCollection();
@@ -549,17 +558,35 @@ namespace CJCMCG
         {
             try
             {
-                Process ntl = new Process
+                Process ntl;
+                try
                 {
-                    StartInfo = new ProcessStartInfo("natsulang", "-s")
+                    ntl = new Process
                     {
-                        RedirectStandardOutput = true,
-                        RedirectStandardInput = true,
-                        RedirectStandardError = true,
-                        UseShellExecute = false,
-                        CreateNoWindow = true
-                    }
-                };
+                        StartInfo = new ProcessStartInfo("natsulang", "-s")
+                        {
+                            RedirectStandardOutput = true,
+                            RedirectStandardInput = true,
+                            RedirectStandardError = true,
+                            UseShellExecute = false,
+                            CreateNoWindow = true
+                        }
+                    };
+                }
+                catch (Exception)
+                {
+                    ntl = new Process
+                    {
+                        StartInfo = new ProcessStartInfo("py", "-m natsulang.__init__ -s")
+                        {
+                            RedirectStandardOutput = true,
+                            RedirectStandardInput = true,
+                            RedirectStandardError = true,
+                            UseShellExecute = false,
+                            CreateNoWindow = true
+                        }
+                    };
+                }
                 ntl.Exited += (s, e) =>
                 {
                     if (((Process)s).ExitCode != 0)
@@ -1249,6 +1276,8 @@ namespace CJCMCG
             {
                 Dispatcher.Invoke(new Action(() =>
                 {
+                    ff.StandardInput.BaseStream.Close();
+                    ff.WaitForExit();
                     prog.SetResourceReference(ContentProperty, "m.Stopped");
                     preview.Text = "";
                     filename.IsEnabled = true;
@@ -1269,6 +1298,8 @@ namespace CJCMCG
                 MessageBox.Show(e.Message, "Error!");
                 Dispatcher.Invoke(new Action(() =>
                 {
+                    ff.StandardInput.BaseStream.Close();
+                    ff.WaitForExit();
                     prog.SetResourceReference(ContentProperty, "m.Failed");
                     preview.Text = "";
                     filename.IsEnabled = true;

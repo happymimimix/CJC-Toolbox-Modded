@@ -398,18 +398,20 @@ namespace CJC_Advanced_Midi_Merger
                     {
                         break;
                     }
-                    char ch = (char)CH;
+                    int ch = CH;
+                    List<byte> Fn = new List<byte>();
                     string fn = "";
                     while (ch != 0)
                     {
-                        fn += ch;
-                        ch = (char)ins.ReadByte();
+                        Fn.Add((byte)ch);
+                        ch = ins.ReadByte();
                         if (ch == -1)
                         {
                             ins.Close();
                             throw new Exception();
                         }
                     }
+                    fn = Encoding.UTF8.GetString(Fn.ToArray());
                     Groups ngr = getgroup(fn, ceng + 1);
                     ch = (char)ins.ReadByte();
                     while (ch != 0)
