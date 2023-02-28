@@ -36,10 +36,10 @@
                 <ComboBoxItem Content="32K" Uid="17280P"/>
             </ComboBox>
         </DockPanel>
-        <DockPanel Height="25" LastChildFill="False" Margin="550,45,0,0" VerticalAlignment="Top" x:Name="is_preprocess_block">
+        <DockPanel Height="25" LastChildFill="False" Margin="600,45,0,0" VerticalAlignment="Top" x:Name="is_preprocess_block">
             <CheckBox VerticalAlignment="Center" x:Name="is_preprocess" Content="{DynamicResource m.OutputToCjcmcg}"></CheckBox>
         </DockPanel>
-        <Button Margin="0,45,10,0" VerticalAlignment="Top" Height="25" HorizontalAlignment="Right" Width="200" Content="{DynamicResource m.ReadHelp}" Click="help_Click"/>
+        <Button Margin="0,45,10,0" VerticalAlignment="Top" Height="25" HorizontalAlignment="Right" Width="150" Content="{DynamicResource m.ReadHelp}" Click="help_Click"/>
         <DockPanel Margin="10,80,270,45" x:Name="Piliang">
             <DockPanel VerticalAlignment="Top" Height="25" Margin="0,0,0,0" DockPanel.Dock="Top">
                 <DockPanel Height="25" LastChildFill="False" Margin="0,0,0,0" VerticalAlignment="Top">

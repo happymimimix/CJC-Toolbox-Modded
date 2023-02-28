@@ -174,11 +174,10 @@ namespace CJC_Advanced_Midi_Merger
                 }
             }
             long TM1 = 0, TM2 = 0, TM = 0;
-            int lstcmd = 256;
+            int lstcmd = 256, lstcmds = 256;
             while (ch2 < newls.Count)
             {
                 TM2 += readtime2();
-                int lstcmds = 256;
                 while (ch1 < original.Count)
                 {
                     int ch = ch1;
@@ -347,7 +346,85 @@ namespace CJC_Advanced_Midi_Merger
             }
             while (ch1 < original.Count)
             {
-                ouf.Add(original[ch1++]);
+                long tmj = readtime1();
+                TM1 += tmj;
+                WriteTime(TM1 - TM);
+                TM = TM1;
+                int cmds = original[ch1++];
+                if (cmds < 128)
+                {
+                    ch1--;
+                    cmds = lstcmds;
+                }
+                ouf.Add((byte)cmds);
+                int cms = cmds & 0b11110000;
+                if (cms == 0b10010000)
+                {
+                    ouf.Add(original[ch1++]); ouf.Add(original[ch1++]);
+                }
+                else if (cms == 0b10000000)
+                {
+                    ouf.Add(original[ch1++]); ouf.Add(original[ch1++]);
+                }
+                else if (cms == 0b11000000 || cms == 0b11010000 || cmds == 0b11110011)
+                {
+                    ouf.Add(original[ch1++]);
+                }
+                else if (cms == 0b11100000 || cms == 0b10110000 || cmds == 0b11110010 || cms == 0b10100000)
+                {
+                    ouf.Add(original[ch1++]); ouf.Add(original[ch1++]);
+                }
+                else if (cmds == 0b11110000)
+                {
+                    int ffx = original[ch1++];
+                    ouf.Add((byte)ffx);
+                    do
+                    {
+                        ouf.Add((byte)(ffx = original[ch1++]));
+                    } while (ffx != 0b11110111);
+                }
+                else if (cmds == 0b11110100 || cmds == 0b11110001 || cmds == 0b11110101 || cmds == 0b11111001 || cmds == 0b11111101 || cmds == 0b11110110 || cmds == 0b11110111 || cmds == 0b11111000 || cmds == 0b11111010 || cmds == 0b11111100 || cmds == 0b11111110)
+                {
+                }
+                else if (cmds == 0b11111111)
+                {
+                    cmds = original[ch1++];
+                    ouf.Add((byte)cmds);
+                    if (cmds == 0)
+                    {
+                        ouf.Add(original[ch1++]); ouf.Add(original[ch1++]); ouf.Add(original[ch1++]);
+                    }
+                    else if (cmds >= 1 && cmds <= 10 || cmds == 0x7f)
+                    {
+                        long ff = readtime1();
+                        WriteTime(ff);
+                        while (ff-- > 0)
+                        {
+                            ouf.Add(original[ch1++]);
+                        }
+                    }
+                    else if (cmds == 0x20 || cmds == 0x21)
+                    {
+                        ouf.Add(original[ch1++]); ouf.Add(original[ch1++]);
+                    }
+                    else if (cmds == 0x2f)
+                    {
+                        ouf.Add(original[ch1++]);
+                        break;
+                    }
+                    else if (cmds == 0x51)
+                    {
+                        ouf.Add(original[ch1++]); ouf.Add(original[ch1++]); ouf.Add(original[ch1++]); ouf.Add(original[ch1++]);
+                    }
+                    else if (cmds == 0x54 || cmds == 0x58)
+                    {
+                        ouf.Add(original[ch1++]); ouf.Add(original[ch1++]); ouf.Add(original[ch1++]); ouf.Add(original[ch1++]); ouf.Add(original[ch1++]);
+                    }
+                    else if (cmds == 0x59)
+                    {
+                        ouf.Add(original[ch1++]); ouf.Add(original[ch1++]); ouf.Add(original[ch1++]);
+                    }
+                }
             }
             return ouf;
         }
