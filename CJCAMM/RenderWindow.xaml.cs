@@ -458,7 +458,7 @@ namespace CJC_Advanced_Midi_Merger
             {
                 List<byte> oun = new List<byte>();
                 long res = 0;
-                MyBufferedReadStream buff = new MyBufferedReadStream(File.Open(grp.file, FileMode.Open, FileAccess.Read, FileShare.Read), 33554432);
+                MyBufferedReadStream buff = new MyBufferedReadStream(File.Open(grp.file, FileMode.Open, FileAccess.Read, FileShare.Read), 16777216);
                 for (int i = 0; i < 10; i++)
                 {
                     buff.ReadByte();
@@ -861,7 +861,7 @@ namespace CJC_Advanced_Midi_Merger
                 }
                 else
                 {
-                    MyBufferedReadStream buff = new MyBufferedReadStream(File.Open(grp.file, FileMode.Open, FileAccess.Read, FileShare.Read), 33554432);
+                    MyBufferedReadStream buff = new MyBufferedReadStream(File.Open(grp.file, FileMode.Open, FileAccess.Read, FileShare.Read), 16777216);
                     for (int i = 0; i < 10; i++)
                     {
                         buff.ReadByte();

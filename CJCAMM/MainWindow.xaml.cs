@@ -622,5 +622,31 @@ namespace CJC_Advanced_Midi_Merger
             e.Effects = DragDropEffects.Copy;
             e.Handled = true;
         }
+
+        private void UpClick(object sender, RoutedEventArgs e)
+        {
+            int idx = MidisAdded.SelectedIndex;
+            if (idx == -1) return;
+            if (idx > 0)
+            {
+                ListBoxItem item = MidisAdded.Items[idx - 1] as ListBoxItem;
+                MidisAdded.Items.RemoveAt(idx - 1);
+                MidisAdded.Items.Insert(idx, item);
+                MidisAdded.SelectedIndex = idx - 1;
+            }
+        }
+
+        private void DownClick(object sender, RoutedEventArgs e)
+        {
+            int idx = MidisAdded.SelectedIndex;
+            if (idx == -1) return;
+            if (idx < MidisAdded.Items.Count - 1)
+            {
+                ListBoxItem item = MidisAdded.Items[idx + 1] as ListBoxItem;
+                MidisAdded.Items.RemoveAt(idx + 1);
+                MidisAdded.Items.Insert(idx, item);
+                MidisAdded.SelectedIndex = idx + 1;
+            }
+        }
     }
 }

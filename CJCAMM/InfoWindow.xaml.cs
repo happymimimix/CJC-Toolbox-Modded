@@ -23,7 +23,7 @@ namespace CJC_Advanced_Midi_Merger
             {
                 filenameget = filename.Text;
             }));
-            BufferedStream buff = new BufferedStream(File.Open(filenameget, FileMode.Open, FileAccess.Read, FileShare.Read), 1048576);
+            MyBufferedReadStream buff = new MyBufferedReadStream(File.Open(filenameget, FileMode.Open, FileAccess.Read, FileShare.Read), 16777216);
             for (int i = 0; i < 10; i++)
             {
                 buff.ReadByte();
@@ -226,6 +226,11 @@ namespace CJC_Advanced_Midi_Merger
             long en = st.Position;
             filesize.Text = (en - bg).ToString("N0");
             st.Close();
+            if (!filename.Text.EndsWith(".cjcamm") && en - bg < 19260817)
+            {
+                progress.IsEnabled = false;
+                GetInfo();
+            }
         }
         public void OKclick(object sender, RoutedEventArgs e)
         {

@@ -7,14 +7,18 @@
         mc:Ignorable="d"
         Title="{DynamicResource a.CJCAMMtitle}" Height="500" Width="800" MinHeight="350" MinWidth="200" Icon="../Resources/CJCAMMIcon.ico">
     <DockPanel LastChildFill="True" Margin="10,10,10,10">
-        <Button Content="{DynamicResource a.Add}" Height="25" VerticalAlignment="Top" Width="75" Margin="0,0,0,0" Click="AddMidi"/>
-        <Button Content="{DynamicResource a.Remove}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,35,0,0" Click="RemoveMidi"/>
-        <Button Content="{DynamicResource a.Clear}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,70,0,0" Click="ClearList" DataContext="{DynamicResource a.clearwarn}" x:Name="Clearbutton"/>
-        <Button Content="{DynamicResource a.Settings}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,105,0,0" Click="OpenSettings"/>
-        <Button Content="{DynamicResource a.Info}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,140,0,0" Click="GetInfo"/>
-        <Button Content="{DynamicResource a.SaveGroup}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,175,0,0" Click="SaveGroup"/>
-        <Button Content="{DynamicResource a.LoadGroup}" Height="25" VerticalAlignment="Top" Width="75" Margin="-75,210,0,0" Click="LoadGroup"/>
-        <Button Content="{DynamicResource a.Start}" Width="75" Margin="-75,245,0,0" Click="StartRender" x:Name="StartButton" IsEnabled="True" HorizontalAlignment="Left"/>
+        <Button Content="{DynamicResource a.Add}" Height="25" VerticalAlignment="Top" Width="80" Margin="0,0,0,0" Click="AddMidi"/>
+        <Button Content="{DynamicResource a.Remove}" Height="25" VerticalAlignment="Top" Width="80" Margin="-80,35,0,0" Click="RemoveMidi"/>
+        <Button Content="{DynamicResource a.Clear}" Height="25" VerticalAlignment="Top" Width="80" Margin="-80,70,0,0" Click="ClearList" DataContext="{DynamicResource a.clearwarn}" x:Name="Clearbutton"/>
+        <Button Content="{DynamicResource a.Settings}" Height="25" VerticalAlignment="Top" Width="80" Margin="-80,105,0,0" Click="OpenSettings"/>
+        <Button Content="{DynamicResource a.Info}" Height="25" VerticalAlignment="Top" Width="80" Margin="-80,140,0,0" Click="GetInfo"/>
+        <Button Content="{DynamicResource a.SaveGroup}" Height="25" VerticalAlignment="Top" Width="80" Margin="-80,175,0,0" Click="SaveGroup"/>
+        <Button Content="{DynamicResource a.LoadGroup}" Height="25" VerticalAlignment="Top" Width="80" Margin="-80,210,0,0" Click="LoadGroup"/>
+        <DockPanel Height="25" VerticalAlignment="Top" Width="80" Margin="-80,245,0,0">
+            <Button Content="↑" Width="35" HorizontalAlignment="Left" Click="UpClick"></Button>
+            <Button Content="↓" Width="35" HorizontalAlignment="Right" Click="DownClick"></Button>
+        </DockPanel>
+        <Button Content="{DynamicResource a.Start}" Width="80" Margin="-80,280,0,0" Click="StartRender" x:Name="StartButton" IsEnabled="True" HorizontalAlignment="Left"/>
         <ListBox x:Name="MidisAdded" Margin="10,0,0,0" AllowDrop="True" DragOver="Dragovertolist" DragEnter="DragtoList" Drop="DroptoList"/>
     </DockPanel>
 </Window>

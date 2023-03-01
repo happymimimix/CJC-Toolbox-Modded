@@ -1,0 +1,128 @@
+﻿<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key=".MainTitle">CJC的工具箱</s:String>
+    <!-- CJCAMM Strings -->
+    <s:String x:Key="a.CJCAMMtitle">CJC的進階MIDI合成工具 (CJCAMM)</s:String>
+    <s:String x:Key="a.Add">新增</s:String>
+    <s:String x:Key="a.Remove">移除</s:String>
+    <s:String x:Key="a.Clear">清空</s:String>
+    <s:String x:Key="a.Settings">設定</s:String>
+    <s:String x:Key="a.Info">資訊</s:String>
+    <s:String x:Key="a.SaveGroup">存儲組</s:String>
+    <s:String x:Key="a.LoadGroup">加載組</s:String>
+    <s:String x:Key="a.Start">開始！</s:String>
+    <s:String x:Key="a.Cancel">取消</s:String>
+    <s:String x:Key="a.Save">輸出檔案</s:String>
+    <s:String x:Key="a.StartWindowtitle">開始合并</s:String>
+    <s:String x:Key="a.InfoWindowtitle">MIDI資訊</s:String>
+    <s:String x:Key="a.MergingMidis">合併Midis...</s:String>
+    <s:String x:Key="a.Setppq">設定PPQ</s:String>
+    <s:String x:Key="a.ImpBpm">將BPM事件合併到第一個音軌</s:String>
+    <s:String x:Key="a.ImpMrg">將所有事件合併到同一個音軌</s:String>
+    <s:String x:Key="a.RemBpm">去除所有速度變更(Tempo) 事件</s:String>
+    <s:String x:Key="a.RemPC">刪除所有樂器變更(將所有樂器設置到鋼琴)</s:String>
+    <s:String x:Key="a.RemPB">刪除所有彎音事件</s:String>
+    <s:String x:Key="a.RemEpt">去除空音軌</s:String>
+    <s:String x:Key="a.TrsPpq">轉換原本PPQ到主要PPQ</s:String>
+    <s:String x:Key="a.Offst">設置偏移(</s:String>
+    <s:String x:Key="a.MinvolFront">刪除音符音量不是大於此音符音量</s:String>
+    <s:String x:Key="a.OKkey">確定</s:String>
+    <s:String x:Key="a.Filename">檔案名稱： </s:String>
+    <s:String x:Key="a.Filesize">檔案大小（字元組）： </s:String>
+    <s:String x:Key="a.Trkcnt">音軌數量： </s:String>
+    <s:String x:Key="a.OriginalPpq">原PPQ </s:String>
+    <s:String x:Key="a.Notecount">音符數量： </s:String>
+    <s:String x:Key="a.Midilen">Midi長度 </s:String>
+    <s:String x:Key="a.Getmoreinfo">獲取更多資訊</s:String>
+    <s:String x:Key="a.Finished">已完成.</s:String>
+    <s:String x:Key="a.Failed">失敗.</s:String>
+    <s:String x:Key="a.Stopped">已停止</s:String>
+    <s:String x:Key="a.Parsingtrack">解析音軌</s:String>
+    <s:String x:Key="a.UnableGroup">無法在群組檔案得到更多訊息</s:String>
+    <s:String x:Key="a.Clickgetinfo">(按&quot;取得更多資訊&quot;來得到更多資訊)</s:String>
+    <s:String x:Key="a.ProcessedTracks">處理 音軌 寫入 音軌...</s:String>
+    <s:String x:Key="a.clearwarn">您確定要刪除此清單嗎?</s:String>
+    <!-- CJC Toolbox Home Page Strings -->
+    <s:String x:Key=".Lang">語言：</s:String>
+    <s:String x:Key=".CJCAMMInfo" xml:space="preserve">CJC進階Midi合併器
+一個專門合併多個MIDIs和顯示MIDI資訊</s:String>
+    <s:String x:Key=".CJCORInfo" xml:space="preserve">CJC移除重疊器
+一個軟體專門移除重疊MIDI</s:String>
+    <s:String x:Key=".CJCMCGInfo" xml:space="preserve">CJC音符計數器
+CJC Apps的代表作品. 專門產生MIDI計數</s:String>
+    <s:String x:Key=".Version" xml:space="preserve">版本 </s:String>
+    <!-- CJCOR Strings -->
+    <s:String x:Key="o.CJCORtitle">CJC重叠音符去除程式 (CJCOR)</s:String>
+    <s:String x:Key="o.AudioRender">使用音頻輸出 （高品質音頻，但速度會變慢）</s:String>
+    <s:String x:Key="o.NotesRemain" xml:space="preserve">剩餘音符數量： </s:String>
+    <s:String x:Key="o.OverlapRate" xml:space="preserve">比率 </s:String>
+    <s:String x:Key="o.Prereading">預讀音軌</s:String>
+    <s:String x:Key="o.Parsingtrack">解析音軌 音軌數 音軌大小 字節</s:String>
+    <s:String x:Key="o.Start">開始!</s:String>
+    <s:String x:Key="o.SuccessfullyOutput" xml:space="preserve">成功將檔案在 </s:String>
+    <!-- CJCMCG Strings -->
+    <s:String x:Key="m.CJCMCGtitle">CJC MIDI音符數產生器</s:String>
+    <s:String x:Key="m.SelectFile">選擇檔案</s:String>
+    <s:String x:Key="m.Width">寬度</s:String>
+    <s:String x:Key="m.Height">高度</s:String>
+    <s:String x:Key="m.Fps">FPS(幀數)</s:String>
+    <s:String x:Key="m.Preset">預設</s:String>
+    <s:String x:Key="m.Preview">預覽文字</s:String>
+    <s:String x:Key="m.PatSel">圖樣</s:String>
+    <s:String x:Key="m.FonSel">字體</s:String>
+    <s:String x:Key="m.FonSz">字體大小</s:String>
+    <s:String x:Key="m.Color">顏色</s:String>
+    <s:String x:Key="m.Align">對齊</s:String>
+    <s:String x:Key="m.AlignUL">左上角</s:String>
+    <s:String x:Key="m.AlignUR">右上角</s:String>
+    <s:String x:Key="m.AlignUM">頂部置中</s:String>
+    <s:String x:Key="m.AlignDL">左下角</s:String>
+    <s:String x:Key="m.AlignDR">右下角</s:String>
+    <s:String x:Key="m.AlignDM">底部置中</s:String>
+    <s:String x:Key="m.OutputToCjcmcg">只處理檔案</s:String>
+    <s:String x:Key="m.PatSv">編輯圖樣</s:String>
+    <s:String x:Key="m.ColorChg">變更顏色</s:String>
+    <s:String x:Key="m.OKkey">確定</s:String>
+    <s:String x:Key="m.ReadHelp">使用說明</s:String>
+    <s:String x:Key="m.Remove">移除</s:String>
+    <s:String x:Key="m.Savv">儲存</s:String>
+    <s:String x:Key="m.Parsingtrack">解析頻道 頻道數 頻道大小 字節</s:String>
+    <s:String x:Key="m.Start">開始！</s:String>
+    <s:String x:Key="m.Cancel">取消</s:String>
+    <s:String x:Key="m.Finished">已完成.</s:String>
+    <s:String x:Key="m.Failed">失敗.</s:String>
+    <s:String x:Key="m.Stopped">終止。</s:String>
+    <s:String x:Key="m.ReadFinished">已讀取完畢.｛數｝音符.</s:String>
+    <s:String x:Key="m.FrameRender">輸出幀數 FPS</s:String>
+    <s:String x:Key="m.DelayStart">延後開始(秒數):</s:String>
+    <s:String x:Key="m.DetectedOld">偵測到舊圖案，更換至新圖案?</s:String>
+    <s:String x:Key="m.ConvertFin">已完成轉換. 儲存?</s:String>
+    <s:String x:Key="m.UpdateOld">升級圖樣?</s:String>
+    <s:String x:Key="m.cjcmcg_help" xml:space="preserve">軟體由CJC Apps製作。請確認程式所在的檔案夾中或C:\Windows\System32中有ffmpeg.exe。如果沒有，你可以在http://ffmpeg.org下載。同時也推薦下載xz.exe (https://tukaani.org/xz)，以免在MIDI解壓縮過程中出現異常。
+
+請確認你已經安裝了Python 3，將Python 3的可執行檔案所在目錄加入到了PATH中，並且已經通過pip安裝了Natsulang，以便正常運行Natsulang。
+
+程式使用Natsulang來生成計數器，這是由CJC製作的文字處理語言。
+
+Natsulang程式中支援以下變數：
+  frm: 當前檔案幀數（從0開始）
+  nc: 當前音符數
+  an: 所有音符數
+  bpm: 每分鍾拍數（即BPM）
+  tm: 時間（秒，建議使用保留兩位小數的格式輸出，見下方說明）
+  nps: 每秒音符數
+  pol: 同時按下的音符數
+  tic: MIDI幀數
+  ati: MIDI總幀數
+  bts: 拍數
+  abt: 總拍數
+  ppq: 每拍幀數（即PPQ）
+  lrc: 歌詞
+  lrc_frm: 歌詞持續幀數（從0開始）
+
+你可以用“{變數}”來直接輸出這個變數的值，也可以在大括號中輸入表示式來進行更複雜的計算。如果你想要生成一個帶有仟位分隔符的數字，請使用“{format({數字},&quot;,&quot;)}”。如果你想要保留兩位小數輸出時間，請使用“{format(tm,&quot;.2f&quot;)}”。
+
+如果你的影片中用了此計數程式，不要忘記在影片簡介中寫入這段內容：
+計數程式由CJC Apps編寫的CJCMCG製作。
+https://github.com/Ace-tyl/CJC-Toolbox-Reborn</s:String>
+</ResourceDictionary>

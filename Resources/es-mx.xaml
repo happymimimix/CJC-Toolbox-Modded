@@ -1,0 +1,127 @@
+﻿<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key=".MainTitle">CJC Toolbox</s:String>
+    <!-- CJCAMM Strings -->
+    <s:String x:Key="a.CJCAMMtitle">Fusión de MIDI avanzada de CJC</s:String>
+    <s:String x:Key="a.Add">Añadir</s:String>
+    <s:String x:Key="a.Remove">Quitar</s:String>
+    <s:String x:Key="a.Clear">Limpiar</s:String>
+    <s:String x:Key="a.Settings">Ajustes</s:String>
+    <s:String x:Key="a.Info">Información</s:String>
+    <s:String x:Key="a.SaveGroup">Guardar grupo</s:String>
+    <s:String x:Key="a.LoadGroup">Cargar grupo</s:String>
+    <s:String x:Key="a.Start">¡Empezar!</s:String>
+    <s:String x:Key="a.Cancel">Cancelar</s:String>
+    <s:String x:Key="a.Save">¡Guardar!</s:String>
+    <s:String x:Key="a.StartWindowtitle">Empezar combinación</s:String>
+    <s:String x:Key="a.InfoWindowtitle">Información del MIDI</s:String>
+    <s:String x:Key="a.MergingMidis">Combinando Midis...</s:String>
+    <s:String x:Key="a.Setppq">Establecer PPQ</s:String>
+    <s:String x:Key="a.ImpBpm">Fusionar los eventos BPM con la primera pista</s:String>
+    <s:String x:Key="a.ImpMrg">Fusionar todos los eventos con una sola pista</s:String>
+    <s:String x:Key="a.RemBpm">Eliminar todos los eventos de BPM</s:String>
+    <s:String x:Key="a.RemPC">Eliminar todos los eventos de cambio de programa (establece todos los instrumentos a piano)</s:String>
+    <s:String x:Key="a.RemPB">Eliminar todos los eventos de pitch bend</s:String>
+    <s:String x:Key="a.RemEpt">Eliminar pistas vacías</s:String>
+    <s:String x:Key="a.TrsPpq">Convertir el PPQ original al PPQ principal</s:String>
+    <s:String x:Key="a.Offst">Definir offset (ticks)</s:String>
+    <s:String x:Key="a.MinvolFront">Eliminar notas con volumen no mayor que</s:String>
+    <s:String x:Key="a.OKkey">Aceptar</s:String>
+    <s:String x:Key="a.Filename">Nombre del archivo: </s:String>
+    <s:String x:Key="a.Filesize">Tamaño del archivo (bytes): </s:String>
+    <s:String x:Key="a.Trkcnt">Número de pistas: </s:String>
+    <s:String x:Key="a.OriginalPpq">PPQ original: </s:String>
+    <s:String x:Key="a.Notecount">Número de notas: </s:String>
+    <s:String x:Key="a.Midilen">Duración de Midi (ticks): </s:String>
+    <s:String x:Key="a.Getmoreinfo">Obtener más información</s:String>
+    <s:String x:Key="a.Finished">Finalizado.</s:String>
+    <s:String x:Key="a.Failed">Fallido.</s:String>
+    <s:String x:Key="a.Stopped">Detenido.</s:String>
+    <s:String x:Key="a.Parsingtrack">Analizando pista {trackcount}, {tracksize} bytes</s:String>
+    <s:String x:Key="a.UnableGroup">No se puede obtener más información sobre archivos en grupo</s:String>
+    <s:String x:Key="a.Clickgetinfo">(Haga clic en &quot;Obtener más información&quot; para obtener)</s:String>
+    <s:String x:Key="a.ProcessedTracks">{trks} pistas procesadas, {wrtt} pistas escritas...</s:String>
+    <s:String x:Key="a.clearwarn">¿Está seguro de limpiar la lista?</s:String>
+    <!-- CJC Toolbox Home Page Strings -->
+    <s:String x:Key=".Lang">Idioma:</s:String>
+    <s:String x:Key=".CJCAMMInfo" xml:space="preserve">CJC Advanced Midi Merger
+Un software utilizado para combinar varios MIDIs y mostrar la información de un MIDI.</s:String>
+    <s:String x:Key=".CJCORInfo" xml:space="preserve">CJC Overlap Remover
+Un software utilizado para eliminar los solapamientos en un MIDI.</s:String>
+    <s:String x:Key=".CJCMCGInfo" xml:space="preserve">CJC Midi Counter Generator
+El trabajo representativo de CJC Apps. Un software utilizado para generar un contador de un MIDI.</s:String>
+    <s:String x:Key=".Version" xml:space="preserve">Versión </s:String>
+    <!-- CJCOR Strings -->
+    <s:String x:Key="o.CJCORtitle">Eliminación de solapamiento de CJC</s:String>
+    <s:String x:Key="o.AudioRender">Usar procesamiento de audio (mayor calidad de audio, pero menor velocidad)</s:String>
+    <s:String x:Key="o.NotesRemain" xml:space="preserve">Notas restantes: </s:String>
+    <s:String x:Key="o.OverlapRate" xml:space="preserve">Tasa: </s:String>
+    <s:String x:Key="o.Prereading">Preleyendo pista {trackcount}</s:String>
+    <s:String x:Key="o.Parsingtrack">Analizando pista {trackcount}, {tracksize} bytes</s:String>
+    <s:String x:Key="o.Start">¡Empezar!</s:String>
+    <s:String x:Key="o.SuccessfullyOutput" xml:space="preserve">Archivo enviado correctamente a </s:String>
+    <!-- CJCMCG Strings -->
+    <s:String x:Key="m.CJCMCGtitle">Generador de MIDI contador de CJC</s:String>
+    <s:String x:Key="m.SelectFile">Seleccionar archivo</s:String>
+    <s:String x:Key="m.Width">Ancho</s:String>
+    <s:String x:Key="m.Height">Altura</s:String>
+    <s:String x:Key="m.Fps">FPS</s:String>
+    <s:String x:Key="m.Preset">Preajuste</s:String>
+    <s:String x:Key="m.Preview">Vista previa del texto</s:String>
+    <s:String x:Key="m.PatSel">Patrón</s:String>
+    <s:String x:Key="m.FonSel">Fuente</s:String>
+    <s:String x:Key="m.FonSz">Tamaño de fuente</s:String>
+    <s:String x:Key="m.Color">Color</s:String>
+    <s:String x:Key="m.Align">Alinear</s:String>
+    <s:String x:Key="m.AlignUL">Superior izquierda</s:String>
+    <s:String x:Key="m.AlignUR">Superior derecha</s:String>
+    <s:String x:Key="m.AlignUM">Superior central</s:String>
+    <s:String x:Key="m.AlignDL">Inferior izquierda</s:String>
+    <s:String x:Key="m.AlignDR">Inferior derecha</s:String>
+    <s:String x:Key="m.AlignDM">Inferior central</s:String>
+    <s:String x:Key="m.OutputToCjcmcg">Preprocesar solo archivo</s:String>
+    <s:String x:Key="m.PatSv">Editar patrones</s:String>
+    <s:String x:Key="m.ColorChg">Cambiar color</s:String>
+    <s:String x:Key="m.OKkey">Aceptar</s:String>
+    <s:String x:Key="m.ReadHelp">Instrucciones de uso</s:String>
+    <s:String x:Key="m.Remove">Quitar</s:String>
+    <s:String x:Key="m.Savv">Guardar</s:String>
+    <s:String x:Key="m.Parsingtrack">Analizando pista {trackcount}, {tracksize} bytes</s:String>
+    <s:String x:Key="m.Start">¡Empezar!</s:String>
+    <s:String x:Key="m.Cancel">Cancelar</s:String>
+    <s:String x:Key="m.Finished">Finalizado.</s:String>
+    <s:String x:Key="m.Failed">Fallido.</s:String>
+    <s:String x:Key="m.Stopped">Detenido.</s:String>
+    <s:String x:Key="m.ReadFinished">Lectura completada. {notecnt} notas.</s:String>
+    <s:String x:Key="m.FrameRender">{frames} fotogramas renderizados, {fps} FPS</s:String>
+    <s:String x:Key="m.DelayStart">Retraso inicial (seg):</s:String>
+    <s:String x:Key="m.DetectedOld">Se ha detectado que este es un patrón antiguo. ¿Convertir a un patrón nuevo?</s:String>
+    <s:String x:Key="m.ConvertFin">Conversión terminada. ¿Guardar?</s:String>
+    <s:String x:Key="m.UpdateOld">¿Actualizar patrón?</s:String>
+    <s:String x:Key="m.cjcmcg_help" xml:space="preserve">Este software está hecho por CJC Apps. Asegúrese de que haya ffmpeg.exe en la misma carpeta que el programa o en C:\Windows\System32. Si no lo tienes, por favor descárgalo en http://ffmpeg.org . También es recomentable descargar un xz.exe (de https://tukaani.org/xz) para descartar excepciones cuando se descomprime MIDI.
+
+Asegúrese de tener instalado Python 3, añadido a PATH (variable) e instalado Natsulang con pip para correr Natsulang normalmente.
+
+Este programa usa Natsulang para generar el contador. Es un lenguaje de procesamiento de texto de CJC.
+
+Puedes hacer programas Natsulang con variables debajo:
+ frm: Fotograma actual: (inicia desde 0)
+ nc: Contador de notas
+ an: Todas las notas
+ bpm: Pulsos por minuto
+ tm: Tiempo (segundos, se recomienda la salida con dos lugares decimales, ver las instrucciones debajo)
+ nps: Notas por segundo
+ pol: Polifonía
+ tic: Tick
+ ati: Todos los ticks
+ abt: Todos los pulsos
+ ppq: Resolución (PPQ)
+ lrc: Letras
+ lrc_frm: Fotogramas desde que esta letra aparece (inicia desde 0)
+
+Puedes usar &quot;{variable}&quot; para mostrar el valor de la variable. También puedes introducir expresiones para hacer otros calculos más complejos. Si quieres generar un número con una coma cada tres dígitos puedes usar &quot;{format({number},',')}&quot;. Si quieres mostrar el tiempo con dos lugares decimales puedes usar &quot;{format(tm,'.2f')}&quot;.
+
+Si usas este contador en tu vídeo no te olvides de darnos créditos así:
+Midi Counter rendered with CJCMCG by CJC Apps.
+https://github.com/Ace-tyl/CJC-Toolbox-Reborn</s:String>
+</ResourceDictionary>

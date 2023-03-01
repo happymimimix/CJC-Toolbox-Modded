@@ -42,10 +42,12 @@
             <ComboBox x:Name="Language" Margin="5,0,0,0" Width="150" VerticalAlignment="Bottom" Height="25" SelectionChanged="Language_SelectionChanged">
                 <ComboBoxItem Content="English (United States)" Uid="en-us" IsSelected="True"/>
                 <ComboBoxItem Content="简体中文 (中国大陆)" Uid="zh-cn"/>
+                <ComboBoxItem Content="繁體中文 (中國台灣)" Uid="zh-tw"/>
                 <ComboBoxItem Content="Deutsches (Deutschland)" Uid="de-de"/>
                 <ComboBoxItem Content="Ελληνικά (Ελλάδα)" Uid="el-gr"/>
                 <ComboBoxItem Content="Indonesia (Indonesia)" Uid="id-id"/>
                 <ComboBoxItem Content="日本語 (日本)" Uid="ja-jp"/>
+                <ComboBoxItem Content="Español (México)" Uid="es-mx"/>
             </ComboBox>
         </DockPanel>
     </Grid>
