@@ -24,6 +24,7 @@
     <s:String x:Key="a.RemPB">Κατάργηση όλων των εντολών αλλαγής τόνου</s:String>
     <s:String x:Key="a.RemEpt">Κατάργηση κενών τμημάτων</s:String>
     <s:String x:Key="a.TrsPpq">Μετατροπή του αρχικού PPQ στο κύριο PPQ</s:String>
+    <s:String x:Key="a.ch1">Όλα τα κανάλια αλλάζουν σε CH1</s:String>
     <s:String x:Key="a.Offst">Ορισμός μετατόπισης (σε ticks)</s:String>
     <s:String x:Key="a.MinvolFront">Κατάργηση νοτών με ένταση μικρότερη ή ίση από</s:String>
     <s:String x:Key="a.OKkey">ΟΚ</s:String>

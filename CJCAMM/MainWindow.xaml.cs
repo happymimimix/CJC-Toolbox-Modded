@@ -29,6 +29,7 @@ namespace CJC_Advanced_Midi_Merger
             public bool ImpMrg;
             public bool RemEpt;
             public bool TrsPpq;
+            public bool allch1;
             public bool RemPC, RemPB;
             public int offst;
             public int tmpo;
@@ -210,6 +211,10 @@ namespace CJC_Advanced_Midi_Merger
                 {
                     go.Add((byte)'P');
                 }
+                if (st.allch1)
+                {
+                    go.Add((byte)'H');
+                }
                 if (st.RemPB)
                 {
                     go.Add((byte)'W');
@@ -338,6 +343,10 @@ namespace CJC_Advanced_Midi_Merger
                     {
                         st.TrsPpq = true;
                     }
+                    if (ch == 'H')
+                    {
+                        st.allch1 = true;
+                    }
                     if (ch == 'W')
                     {
                         st.RemPB = true;
@@ -459,6 +468,10 @@ namespace CJC_Advanced_Midi_Merger
                         if (ch == 'P')
                         {
                             ngr.st.TrsPpq = true;
+                        }
+                        if (ch == 'H')
+                        {
+                            ngr.st.allch1 = true;
                         }
                         if (ch == 'W')
                         {

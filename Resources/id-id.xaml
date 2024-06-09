@@ -24,6 +24,7 @@
     <s:String x:Key="a.RemPB">Singkirkan semua lengkungan nada</s:String>
     <s:String x:Key="a.RemEpt">Singkirkan trek yang kosong</s:String>
     <s:String x:Key="a.TrsPpq">Konversi PPQ yang asli menjadi PPQ utama</s:String>
+    <s:String x:Key="a.ch1">Semua saluran diubah ke CH1</s:String>
     <s:String x:Key="a.Offst">Setel offset (tick)</s:String>
     <s:String x:Key="a.MinvolFront">Singkirkan note dengan volume tidak lebih besar dari</s:String>
     <s:String x:Key="a.OKkey">Oke</s:String>

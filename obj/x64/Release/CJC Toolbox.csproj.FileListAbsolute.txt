@@ -1,0 +1,59 @@
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\CJC Toolbox.exe.config
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\CJC Toolbox.exe
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\CJC Toolbox.pdb
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\Microsoft.Dynamic.xml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\Microsoft.Scripting.xml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\Microsoft.Scripting.Metadata.xml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\System.Buffers.xml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\System.Memory.xml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\System.Numerics.Vectors.xml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\bin\x64\Release\System.Text.Encoding.CodePages.xml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\Resources\de-de.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\Resources\el-gr.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\Resources\en-us.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\Resources\es-mx.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\Resources\id-id.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\Resources\ja-jp.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\Resources\zh-cn.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\Resources\zh-tw.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\InfoWindow.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\MainWindow.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\RenderWindow.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\SaveWindow.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\SettingsWindow.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\StartWindow.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCMCG\ChangeColor.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCMCG\EditReg.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCMCG\Helpfile.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCMCG\MainWindow.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCMCG\StringInputer.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCOR\MainWindow.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\MainWindow.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\App.g.cs
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJC Toolbox_MarkupCompile.cache
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJC Toolbox_MarkupCompile.lref
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\App.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\InfoWindow.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\MainWindow.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\RenderWindow.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\SaveWindow.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\SettingsWindow.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCAMM\StartWindow.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCMCG\ChangeColor.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCMCG\EditReg.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCMCG\Helpfile.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCMCG\MainWindow.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCMCG\StringInputer.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJCOR\MainWindow.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\MainWindow.baml
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJC Toolbox.g.resources
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJC_Toolbox.Properties.Resources.resources
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJC Toolbox.csproj.GenerateResource.cache
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJC Toolbox.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJC Toolbox.csproj.Fody.CopyLocal.cache
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJC Toolbox.csproj.Fody.RuntimeCopyLocal.cache
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJC Toolbox.csproj.CopyComplete
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJC Toolbox.exe
+C:\Users\Administrator\Downloads\CJC-Toolbox-Reborn-master\obj\x64\Release\CJC Toolbox.pdb

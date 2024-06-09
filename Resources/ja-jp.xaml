@@ -24,6 +24,7 @@
     <s:String x:Key="a.RemPB">全ピッチベンドイベントを削除</s:String>
     <s:String x:Key="a.RemEpt">空トラックを削除</s:String>
     <s:String x:Key="a.TrsPpq">元の分解能をメインの分解能に変換</s:String>
+    <s:String x:Key="a.ch1">全チャンネルがCH1に変更されます</s:String>
     <s:String x:Key="a.Offst">オフセットを設定(ティック)</s:String>
     <s:String x:Key="a.MinvolFront">より大きい音量の音符を削除</s:String>
     <s:String x:Key="a.OKkey">OK</s:String>

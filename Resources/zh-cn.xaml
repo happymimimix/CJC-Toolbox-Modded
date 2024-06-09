@@ -24,6 +24,7 @@
     <s:String x:Key="a.RemPB">删除所有弯音事件</s:String>
     <s:String x:Key="a.RemEpt">删除空音轨</s:String>
     <s:String x:Key="a.TrsPpq">将原PPQ转换至目标PPQ</s:String>
+    <s:String x:Key="a.ch1">所有通道全部改为CH1</s:String>
     <s:String x:Key="a.Offst">设置延迟 (时间戳数)</s:String>
     <s:String x:Key="a.MinvolFront">删除所有音量不大于此值的音符：</s:String>
     <s:String x:Key="a.OKkey">确认</s:String>

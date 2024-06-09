@@ -24,6 +24,7 @@
     <s:String x:Key="a.RemPB">Eliminar todos los eventos de pitch bend</s:String>
     <s:String x:Key="a.RemEpt">Eliminar pistas vacías</s:String>
     <s:String x:Key="a.TrsPpq">Convertir el PPQ original al PPQ principal</s:String>
+    <s:String x:Key="a.ch1">Todos los canales se cambian a CH1</s:String>
     <s:String x:Key="a.Offst">Definir offset (ticks)</s:String>
     <s:String x:Key="a.MinvolFront">Eliminar notas con volumen no mayor que</s:String>
     <s:String x:Key="a.OKkey">Aceptar</s:String>

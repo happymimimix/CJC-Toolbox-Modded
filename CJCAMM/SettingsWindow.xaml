@@ -15,14 +15,15 @@
         <CheckBox Content="{DynamicResource a.RemPB}" x:Name="RemPB" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="{DynamicResource a.RemEpt}" x:Name="RemEptt" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="{DynamicResource a.TrsPpq}" x:Name="trsppq" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
-        <DockPanel Height="24" LastChildFill="False" Margin="10,150,0,0" VerticalAlignment="Top">
+        <DockPanel Height="24" LastChildFill="False" Margin="10,171,0,0" VerticalAlignment="Top">
             <Label Content="{DynamicResource a.Offst}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
             <mdfk:DecimalUpDown x:Name="offset" Value="0" Increment="1" Maximum="2000000000" Minimum="0" HorizontalAlignment="Left" Width="82" Height="24" VerticalAlignment="Top" DockPanel.Dock="Left" />
         </DockPanel>
-        <DockPanel Height="24" LastChildFill="False" Margin="10,174,0,0" VerticalAlignment="Top">
+        <DockPanel Height="24" LastChildFill="False" Margin="10,195,0,0" VerticalAlignment="Top">
             <Label Content="{DynamicResource a.MinvolFront}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left"/>
             <mdfk:DecimalUpDown x:Name="minvol" Value="-1" Increment="1" Maximum="127" Minimum="-1" HorizontalAlignment="Left" Width="56" Height="24" VerticalAlignment="Top" DockPanel.Dock="Left" />
         </DockPanel>
         <Button Content="{DynamicResource a.OKkey}" Margin="10,0,10,10" Height="25" VerticalAlignment="Bottom" Click="okclick"/>
+        <CheckBox Content="{DynamicResource a.ch1}" x:Name="allch1" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

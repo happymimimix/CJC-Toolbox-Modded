@@ -24,6 +24,7 @@
     <s:String x:Key="a.RemPB">刪除所有彎音事件</s:String>
     <s:String x:Key="a.RemEpt">去除空音軌</s:String>
     <s:String x:Key="a.TrsPpq">轉換原本PPQ到主要PPQ</s:String>
+    <s:String x:Key="a.ch1">所有通道全部改為CH1</s:String>
     <s:String x:Key="a.Offst">設置偏移(</s:String>
     <s:String x:Key="a.MinvolFront">刪除音符音量不是大於此音符音量</s:String>
     <s:String x:Key="a.OKkey">確定</s:String>

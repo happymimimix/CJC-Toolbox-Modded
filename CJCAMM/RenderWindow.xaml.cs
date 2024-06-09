@@ -76,8 +76,12 @@ namespace CJC_Advanced_Midi_Merger
             ous = new MyBufferedStream(File.Open(outfile, FileMode.Create, FileAccess.Write, FileShare.Write), 67108864);
             InitializeComponent();
         }
-        public List<byte> ImplaceTrks(List<byte> original, List<byte> newls)
+        public List<byte> ImplaceTrks(List<byte> original, List<byte> newls, bool TOCH1)
         {
+            byte CH1(byte statusByte)
+            {
+                return (byte)(statusByte & 0b11110000);
+            }
             if (newls.Count == 0)
             {
                 return original;
@@ -273,6 +277,12 @@ namespace CJC_Advanced_Midi_Merger
                 {
                     ch2--;
                     cmd = lstcmd;
+                } else
+                {
+                    if (((cmd & 0b11110000) != 0b11110000) && TOCH1)
+                    {
+                        cmd = CH1((byte)cmd);
+                    }
                 }
                 ouf.Add((byte)cmd);
                 int cm = cmd & 0b11110000;
@@ -355,6 +365,12 @@ namespace CJC_Advanced_Midi_Merger
                 {
                     ch1--;
                     cmds = lstcmds;
+                } else
+                {
+                    if (((cmds & 0b11110000) != 0b11110000) && TOCH1)
+                    {
+                        cmds = CH1((byte)cmds);
+                    }
                 }
                 ouf.Add((byte)cmds);
                 int cms = cmds & 0b11110000;
@@ -821,15 +837,15 @@ namespace CJC_Advanced_Midi_Merger
                         len--;
                         buff.ReadByte();
                     }
-                    tmp3 = ImplaceTrks(tmp3, ouf);
+                    tmp3 = ImplaceTrks(tmp3, ouf, grp.st.allch1);
                     if (tmp3.Count > tmp2.Count)
                     {
-                        tmp2 = ImplaceTrks(tmp2, tmp3);
+                        tmp2 = ImplaceTrks(tmp2, tmp3, grp.st.allch1);
                         tmp3 = new List<byte>();
                     }
                     if (tmp2.Count > tmp.Count)
                     {
-                        tmp = ImplaceTrks(tmp, tmp2);
+                        tmp = ImplaceTrks(tmp, tmp2, grp.st.allch1);
                         tmp2 = new List<byte>();
                     }
                     trkp++;
@@ -846,6 +862,10 @@ namespace CJC_Advanced_Midi_Merger
         }
         public void WriteMidis(Groups grp, bool rembpm, bool impmrg, bool remept, long offst, bool ImpBpm, int trppq, int ppq, int minvol, bool remb, bool remc)
         {
+            byte CH1(byte statusByte)
+            {
+                return (byte)(statusByte & 0b11110000);
+            }
             if (!impmrg && !ImpBpm)
             {
                 if (grp.file.EndsWith(".cjcamm"))
@@ -959,6 +979,12 @@ namespace CJC_Advanced_Midi_Merger
                             {
                                 nxtcmd = cmd;
                                 cmd = lstcmd;
+                            } else
+                            {
+                                if (((cmd & 0b11110000) != 0b11110000) && grp.st.allch1)
+                                {
+                                    cmd = CH1((byte)cmd);
+                                }
                             }
                             int cm = cmd & 0b11110000;
                             if (cm == 0b10010000)
@@ -1202,8 +1228,8 @@ namespace CJC_Advanced_Midi_Merger
             else
             {
                 long tms = ImplaceMerge(grp, impmrg, offst, rembpm, trppq, ppq, minvol, remb, remc);
-                tmp2 = ImplaceTrks(tmp2, tmp3);
-                tmp = ImplaceTrks(tmp, tmp2);
+                tmp2 = ImplaceTrks(tmp2, tmp3, grp.st.allch1);
+                tmp = ImplaceTrks(tmp, tmp2, grp.st.allch1);
                 if (tmp.Count > 0)
                 {
                     tmp.Add(0);
